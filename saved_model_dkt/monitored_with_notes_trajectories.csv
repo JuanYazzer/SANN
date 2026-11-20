@@ -1,0 +1,1334 @@
+﻿student_key,NIM,Student_Name,Class_Name,student_all_misconceptions,timestep,curr_attempt_id,curr_attempt_no,curr_attempt_session,curr_quiz_name,curr_quiz_category,curr_q_order,curr_q_total,curr_submit_time,curr_submit_stage,curr_problem_id,curr_problem_name,curr_correctness,curr_code,curr_is_monitored,curr_monitored_row_no,curr_monitored_category,curr_monitored_source,curr_monitored_status_asli,curr_monitored_hasil_gt,curr_monitored_code_note,curr_monitored_reviewer,curr_misconception,next_attempt_id,next_attempt_no,next_attempt_session,next_quiz_name,next_quiz_category,next_q_order,next_q_total,next_submit_time,next_submit_stage,next_problem_id,next_problem_name,next_correctness,next_code,next_is_monitored,next_monitored_row_no,next_monitored_category,next_monitored_source,next_monitored_status_asli,next_monitored_hasil_gt,next_monitored_code_note,next_monitored_reviewer,next_misconception,pred_prob,pred_label,curr_top_line_no,curr_top_line_weight_pct,curr_top_line_code
+BS1DS-50-REG-02_103052500076,103052500076,NI PUTU GITALI HRDAYANI RAJAN,BS1DS-50-REG-02,"EX-01, EX-04, IO-05, VA-12, SQ-03, VA-10",12,431115,1,3,Problem Solving Week 1-2 Ultimate,Ultimate,1,10,2026-10-14 08:52:37,Final Submit,10,Menentukan Bilangan Negatif Tanpa Percabangan,1,"program CekNegatif
+kamus
+    x, hasil : integer
+
+algoritma
+    input(x)
+    hasil <- (x >> 31) & 1
+    output(hasil)",False,,,,,,-,-,"Semua MP Minggu Itu: EX-01, EX-04, IO-05, VA-12, SQ-03, VA-10",431115,1,3,Problem Solving Week 1-2 Ultimate,Ultimate,2,10,2026-10-14 08:58:12,First Submit First Attempt,9,Menentukan Apakah Bilangan Kedua Merupakan Faktor Bilangan Pertama,0,"program CekFaktor
+kamus
+    x, y, hasil : integer
+
+algoritma
+    input(x, y)
+    hasil <- (x mod y = 0)
+    output(hasil)",True,28.0,Wrong with Misconception,First Submit First Attempt,Incorrect (Mark: 0),wrong,"OP-01, EX-03",Izzan,"Relevan KC (VA, OP, EX, IO, SQ): VA-12, VA-10, EX-01, EX-04, IO-05, SQ-03 | Semua MP Minggu Itu: EX-01, EX-04, IO-05, VA-12, SQ-03, VA-10",0.8421232104301453,1,7,31.6,hasil <- (x >> 31) & 1
+BS1DS-50-REG-02_103052500076,103052500076,NI PUTU GITALI HRDAYANI RAJAN,BS1DS-50-REG-02,"EX-01, EX-04, IO-05, VA-12, SQ-03, VA-10",13,431115,1,3,Problem Solving Week 1-2 Ultimate,Ultimate,2,10,2026-10-14 08:58:12,First Submit First Attempt,9,Menentukan Apakah Bilangan Kedua Merupakan Faktor Bilangan Pertama,0,"program CekFaktor
+kamus
+    x, y, hasil : integer
+
+algoritma
+    input(x, y)
+    hasil <- (x mod y = 0)
+    output(hasil)",True,28.0,Wrong with Misconception,First Submit First Attempt,Incorrect (Mark: 0),wrong,"OP-01, EX-03",Izzan,"Relevan KC (VA, OP, EX, IO, SQ): VA-12, VA-10, EX-01, EX-04, IO-05, SQ-03 | Semua MP Minggu Itu: EX-01, EX-04, IO-05, VA-12, SQ-03, VA-10",431115,1,3,Problem Solving Week 1-2 Ultimate,Ultimate,3,10,2026-10-14 08:58:12,Final Submit,9,Menentukan Apakah Bilangan Kedua Merupakan Faktor Bilangan Pertama,1,"program CekFaktor
+kamus
+    x, y, hasil : integer
+
+algoritma
+    input(x, y)
+    hasil <- 1 - ((x mod y) mod 2)
+    output(hasil)",False,,,,,,-,-,"Relevan KC (VA, OP, EX, IO, SQ): VA-12, VA-10, EX-01, EX-04, IO-05, SQ-03 | Semua MP Minggu Itu: EX-01, EX-04, IO-05, VA-12, SQ-03, VA-10",0.4025779366493225,0,7,50.5,hasil <- (x mod y = 0)
+BS1DS-50-REG-02_103052500076,103052500076,NI PUTU GITALI HRDAYANI RAJAN,BS1DS-50-REG-02,"EX-01, EX-04, IO-05, VA-12, SQ-03, VA-10",14,431115,1,3,Problem Solving Week 1-2 Ultimate,Ultimate,3,10,2026-10-14 08:58:12,Final Submit,9,Menentukan Apakah Bilangan Kedua Merupakan Faktor Bilangan Pertama,1,"program CekFaktor
+kamus
+    x, y, hasil : integer
+
+algoritma
+    input(x, y)
+    hasil <- 1 - ((x mod y) mod 2)
+    output(hasil)",False,,,,,,-,-,"Relevan KC (VA, OP, EX, IO, SQ): VA-12, VA-10, EX-01, EX-04, IO-05, SQ-03 | Semua MP Minggu Itu: EX-01, EX-04, IO-05, VA-12, SQ-03, VA-10",431115,1,3,Problem Solving Week 1-2 Ultimate,Ultimate,4,10,2026-10-14 09:01:36,Final Submit,11,Menghitung Nilai Absolut Tanpa Percabangan,0,"program NilaiMutlak
+kamus
+    x, y : integer
+
+algoritma
+    input(x)
+    y ← x
+    y ← y * (1 - 2 * (x < 0))
+    output(y)",True,30.0,Wrong with Misconception,Final Submit,"Incorrect (Mark: 0.5, Attempt #1)",wrong,EX-03,Izzan,"Relevan KC (VA, OP, EX, IO, SQ): VA-12, VA-10, EX-01, EX-04, IO-05, SQ-03 | Semua MP Minggu Itu: EX-01, EX-04, IO-05, VA-12, SQ-03, VA-10",0.3285352885723114,0,7,53.5,hasil <- 1 - ((x mod y) mod 2)
+BS1DS-50-REG-02_103052500076,103052500076,NI PUTU GITALI HRDAYANI RAJAN,BS1DS-50-REG-02,"EX-01, EX-04, IO-05, VA-12, SQ-03, VA-10",15,431115,1,3,Problem Solving Week 1-2 Ultimate,Ultimate,4,10,2026-10-14 09:01:36,Final Submit,11,Menghitung Nilai Absolut Tanpa Percabangan,0,"program NilaiMutlak
+kamus
+    x, y : integer
+
+algoritma
+    input(x)
+    y ← x
+    y ← y * (1 - 2 * (x < 0))
+    output(y)",True,30.0,Wrong with Misconception,Final Submit,"Incorrect (Mark: 0.5, Attempt #1)",wrong,EX-03,Izzan,"Relevan KC (VA, OP, EX, IO, SQ): VA-12, VA-10, EX-01, EX-04, IO-05, SQ-03 | Semua MP Minggu Itu: EX-01, EX-04, IO-05, VA-12, SQ-03, VA-10",431115,1,3,Problem Solving Week 1-2 Ultimate,Ultimate,5,10,2026-10-15 08:14:05,First Submit First Attempt,17,Pertukaran Isi Tiga Variabel,0,"program tukar
+kamus
+   x, y, z : integer
+algoritma
+   input(x,y,z)
+   x <- z
+   y <- x
+   z <- y
+   output(x,y,z)
+endprogram",True,31.0,Wrong with Misconception,First Submit First Attempt,Incorrect (Mark: 0),wrong,VA-05,Izzan,"Relevan KC (VA, EX, IO, SQ): VA-12, VA-10, EX-01, EX-04, IO-05, SQ-03 | Semua MP Minggu Itu: EX-01, EX-04, IO-05, VA-12, SQ-03, VA-10",0.46671631932258606,0,8,68.8,y ← y * (1 - 2 * (x < 0))
+BS1DS-50-REG-02_103052500076,103052500076,NI PUTU GITALI HRDAYANI RAJAN,BS1DS-50-REG-02,"EX-01, EX-04, IO-05, VA-12, SQ-03, VA-10",16,431115,1,3,Problem Solving Week 1-2 Ultimate,Ultimate,5,10,2026-10-15 08:14:05,First Submit First Attempt,17,Pertukaran Isi Tiga Variabel,0,"program tukar
+kamus
+   x, y, z : integer
+algoritma
+   input(x,y,z)
+   x <- z
+   y <- x
+   z <- y
+   output(x,y,z)
+endprogram",True,31.0,Wrong with Misconception,First Submit First Attempt,Incorrect (Mark: 0),wrong,VA-05,Izzan,"Relevan KC (VA, EX, IO, SQ): VA-12, VA-10, EX-01, EX-04, IO-05, SQ-03 | Semua MP Minggu Itu: EX-01, EX-04, IO-05, VA-12, SQ-03, VA-10",431115,1,3,Problem Solving Week 1-2 Ultimate,Ultimate,6,10,2026-10-15 08:14:05,Final Submit,17,Pertukaran Isi Tiga Variabel,1,"program TukarVariabel
+
+kamus
+    x, y, z, temp : integer
+
+algoritma
+    input(x, y, z)
+
+    temp <- y
+    y <- x
+    x <- z
+    z <- temp
+
+    output(x)
+    output(y)
+    output(z)
+endprogram",False,,,,,,-,-,"Relevan KC (VA, EX, IO, SQ): VA-12, VA-10, EX-01, EX-04, IO-05, SQ-03 | Semua MP Minggu Itu: EX-01, EX-04, IO-05, VA-12, SQ-03, VA-10",0.26550981402397156,0,5,59.2,"input(x,y,z)"
+BS1IF-50-REG01_103012500167,103012500167,DANENDRA IBRAHIM SUSILO,BS1IF-50-REG01,"IO-05, OP-05, OP-06",7,160752,1,1,Problem Solving Week 1-2 Easy,Easy,7,7,2026-09-26 12:56:45,Final Submit,18,Sisa Pembagian Kue (mod),0,"Program Cookies
+kamus
+    y, x, sisa : integer
+algoritma
+    input(y,x)
+    sisa <- y mod x
+    output(sisa)
+endprogram",False,,,,,,-,-,"Semua MP Minggu Itu: IO-05, OP-05, OP-06",178883,1,2,Problem Solving Week 1-2 Challenger,Challenger,1,4,2026-09-27 22:44:27,Final Submit,15,Persamaan y = (x² + 1/x)²,0,"Program Persamaan
+kamus
+    x, y : real
+algoritma
+    input(x)
+    y <- (x * x + 1 / x) * (x * x + 1 / x)
+    output(y)
+endprogram",True,1.0,Wrong with Misconception,Final Submit,"Incorrect (Mark: 0, Attempt #1)",wrong,OP-7,Juan,"Relevan KC (VA, OP, EX, IO, SQ): OP-05, OP-06, IO-05 | Semua MP Minggu Itu: IO-05, OP-05, OP-06",0.03286740928888321,0,6,31.7,sisa <- y mod x
+BS1IF-50-REG01_103012500167,103012500167,DANENDRA IBRAHIM SUSILO,BS1IF-50-REG01,"IO-05, OP-05, OP-06",8,178883,1,2,Problem Solving Week 1-2 Challenger,Challenger,1,4,2026-09-27 22:44:27,Final Submit,15,Persamaan y = (x² + 1/x)²,0,"Program Persamaan
+kamus
+    x, y : real
+algoritma
+    input(x)
+    y <- (x * x + 1 / x) * (x * x + 1 / x)
+    output(y)
+endprogram",True,1.0,Wrong with Misconception,Final Submit,"Incorrect (Mark: 0, Attempt #1)",wrong,OP-7,Juan,"Relevan KC (VA, OP, EX, IO, SQ): OP-05, OP-06, IO-05 | Semua MP Minggu Itu: IO-05, OP-05, OP-06",178883,1,2,Problem Solving Week 1-2 Challenger,Challenger,2,4,2026-09-27 22:47:41,Final Submit,7,Membaca dan Mencetak Karakter,1,"program cetak
+kamus
+    kar : char
+algoritma
+    input(kar)
+    output(kar)
+endprogram",False,,,,,,-,-,"Semua MP Minggu Itu: IO-05, OP-05, OP-06",0.12825630605220795,0,6,80.9,y <- (x * x + 1 / x) * (x * x + 1 / x)
+BS1IF-50-REG01_103012500168,103012500168,FAHRI PUTRA YONKI,BS1IF-50-REG01,"IO-01, IO-05, VA-12, VA-13, VA-14",1,179135,1,1,Problem Solving Week 1-2 Easy,Easy,1,8,2026-09-27 23:04:23,First Submit First Attempt,5,Konversi Suhu Celsius ke Fahrenheit,0,"program konversi
+kamus
+   celcius : integer
+   fahrenheit : real
+algoritma
+   input(celcius)
+   fahrenheit = (9.0/5.0)*celcius+32.0",True,2.0,Wrong with Misconception,First Submit First Attempt,Incorrect (Mark: 0),wrong,IO-05,Juan,"Relevan KC (VA, OP, EX, IO, SQ): VA-12, VA-13, VA-14, IO-01, IO-05 | Semua MP Minggu Itu: IO-01, IO-05, VA-12, VA-13, VA-14",179135,1,1,Problem Solving Week 1-2 Easy,Easy,2,8,2026-09-27 23:04:23,Final Submit,5,Konversi Suhu Celsius ke Fahrenheit,1,"program konversi
+kamus
+    celcius : integer
+    fahrenheit : real
+algoritma
+    input(celcius)
+    fahrenheit = (9.0/5.0)*celcius+32.0
+    output(fahrenheit)",False,,,,,,-,-,"Relevan KC (VA, OP, EX, IO, SQ): VA-12, VA-13, VA-14, IO-01, IO-05 | Semua MP Minggu Itu: IO-01, IO-05, VA-12, VA-13, VA-14",0.11304202675819397,0,7,69.6,fahrenheit = (9.0/5.0)*celcius+32.0
+BS1IF-50-REG01_103012500250,103012500250,JULIAN FERDIYANTO,BS1IF-50-REG01,IO-01,5,167685,1,1,Problem Solving Week 1-2 Easy,Easy,5,8,2026-09-26 21:21:40,Final Submit,6,Konversi Suhu Celsius ke Kelvin,1,"program berat
+kamus
+    c, k: real
+algoritma
+    input(c)
+    k = c + 273
+    output(k)
+endprogram",False,,,,,,-,-,Semua MP Minggu Itu: IO-01,167685,1,1,Problem Solving Week 1-2 Easy,Easy,6,8,2026-09-26 21:23:13,First Submit First Attempt,13,Pembagian Burger per Anggota Keluarga (div),0,"program berat
+kamus
+    y, x: real
+algoritma
+    input(berat)
+    total = y % x
+    output(total)
+endprogram",True,3.0,Wrong with Misconception,First Submit First Attempt,Incorrect (Mark: 0),wrong,OP-09,Juan,"Relevan KC (VA, OP, EX, IO, SQ): IO-01 | Semua MP Minggu Itu: IO-01",0.9880738854408264,1,6,34.7,k = c + 273
+BS1IF-50-REG01_103012500250,103012500250,JULIAN FERDIYANTO,BS1IF-50-REG01,IO-01,6,167685,1,1,Problem Solving Week 1-2 Easy,Easy,6,8,2026-09-26 21:23:13,First Submit First Attempt,13,Pembagian Burger per Anggota Keluarga (div),0,"program berat
+kamus
+    y, x: real
+algoritma
+    input(berat)
+    total = y % x
+    output(total)
+endprogram",True,3.0,Wrong with Misconception,First Submit First Attempt,Incorrect (Mark: 0),wrong,OP-09,Juan,"Relevan KC (VA, OP, EX, IO, SQ): IO-01 | Semua MP Minggu Itu: IO-01",167685,1,1,Problem Solving Week 1-2 Easy,Easy,7,8,2026-09-26 21:23:13,Final Submit,13,Pembagian Burger per Anggota Keluarga (div),1,"program berat
+kamus
+    y, x, total: integer
+algoritma
+    input(y, x)
+    total = y div x
+    output(total)
+endprogram",False,,,,,,-,-,"Relevan KC (VA, OP, EX, IO, SQ): IO-01 | Semua MP Minggu Itu: IO-01",0.8178637623786926,1,6,39.0,total = y % x
+BS1IF-50-REG01_103012500250,103012500250,JULIAN FERDIYANTO,BS1IF-50-REG01,IO-01,9,168027,1,2,Problem Solving Week 1-2 Challenger,Challenger,1,4,2026-09-26 21:29:11,Final Submit,1,Fungsi,0,"program fungsi
+kamus
+    x, fx: real
+algoritma
+    input(x)
+    fx = (x*x*x + 3*x) / (x*x*x*x - 3*x*x + 4)
+    output(fx)
+endprogram",False,,,,,,-,-,Semua MP Minggu Itu: IO-01,168027,1,2,Problem Solving Week 1-2 Challenger,Challenger,2,4,2026-09-26 21:54:34,Final Submit,2,Kalkulator Pecahan (a/b dan c/d),1,"program kalkulator_pecahan
+kamus
+  a, b, c, d: integer
+  num_add, den_add: integer
+  num_sub, den_sub: integer
+  num_mul, den_mul: integer
+  num_div, den_div: integer
+
+algoritma
+  input(a, b, c, d)
+
+  // Operasi Penjumlahan (a/b + c/d)
+  num_add <- (a * d) + (b * c)
+  den_add <- (b * d)
+  output(""addition:"")
+  output(num_add)
+  output(""/"")
+  output(den_add)
+
+  // Operasi Pengurangan (a/b - c/d)
+  num_sub <- (a * d) - (b * c)
+  den_sub <- (b * d)
+  output(""subtraction:"")
+  output(num_sub)
+  output(""/"")
+  output(den_sub)
+
+  // Operasi Perkalian (a/b * c/d)
+  num_mul <- (a * c)
+  den_mul <- (b * d)
+  output(""multiplication:"")
+  output(num_mul)
+  output(""/"")
+  output(den_mul)
+
+  // Operasi Pembagian (a/b / c/d)
+  num_div <- (a * d)
+  den_div <- (b * c)
+  output(""division:"")
+  output(num_div)
+  output(""/"")
+  output(den_div)
+endprogram",True,4.0,Correct with Misconception,Final Submit,"Correct (Mark: 1, Attempt #1)",correct,VA-12,Juan,"Relevan KC (VA, OP, EX, IO, SQ): IO-01 | Semua MP Minggu Itu: IO-01",0.4738200008869171,0,6,88.5,fx = (x*x*x + 3*x) / (x*x*x*x - 3*x*x + 4)
+BS1IF-50-REG01_103012500250,103012500250,JULIAN FERDIYANTO,BS1IF-50-REG01,IO-01,10,168027,1,2,Problem Solving Week 1-2 Challenger,Challenger,2,4,2026-09-26 21:54:34,Final Submit,2,Kalkulator Pecahan (a/b dan c/d),1,"program kalkulator_pecahan
+kamus
+  a, b, c, d: integer
+  num_add, den_add: integer
+  num_sub, den_sub: integer
+  num_mul, den_mul: integer
+  num_div, den_div: integer
+
+algoritma
+  input(a, b, c, d)
+
+  // Operasi Penjumlahan (a/b + c/d)
+  num_add <- (a * d) + (b * c)
+  den_add <- (b * d)
+  output(""addition:"")
+  output(num_add)
+  output(""/"")
+  output(den_add)
+
+  // Operasi Pengurangan (a/b - c/d)
+  num_sub <- (a * d) - (b * c)
+  den_sub <- (b * d)
+  output(""subtraction:"")
+  output(num_sub)
+  output(""/"")
+  output(den_sub)
+
+  // Operasi Perkalian (a/b * c/d)
+  num_mul <- (a * c)
+  den_mul <- (b * d)
+  output(""multiplication:"")
+  output(num_mul)
+  output(""/"")
+  output(den_mul)
+
+  // Operasi Pembagian (a/b / c/d)
+  num_div <- (a * d)
+  den_div <- (b * c)
+  output(""division:"")
+  output(num_div)
+  output(""/"")
+  output(den_div)
+endprogram",True,4.0,Correct with Misconception,Final Submit,"Correct (Mark: 1, Attempt #1)",correct,VA-12,Juan,"Relevan KC (VA, OP, EX, IO, SQ): IO-01 | Semua MP Minggu Itu: IO-01",168027,1,2,Problem Solving Week 1-2 Challenger,Challenger,3,4,2026-09-27 21:07:04,Final Submit,7,Membaca dan Mencetak Karakter,1,"program SalinKarakter
+kamus
+    ch : char
+algoritma
+    input(ch)
+    output(ch)
+endprogram",False,,,,,,-,-,Semua MP Minggu Itu: IO-01,0.9784971475601196,1,10,9.7,"input(a, b, c, d)"
+BS1IF-50-REG01_103012500250,103012500250,JULIAN FERDIYANTO,BS1IF-50-REG01,IO-01,13,177529,1,3,Problem Solving Week 1-2 Ultimate,Ultimate,1,10,2026-09-27 21:25:27,Final Submit,12,Menyisipkan Satu Digit di Tengah Bilangan Empat Digit,1,"program digit
+kamus
+    a, b, depan, belakang, hasil: integer
+algoritma
+    input(a, b)
+    depan = a div 100
+    belakang = a mod 100
+    hasil = (depan * 1000) + (b * 100) + belakang
+    output(hasil)
+endprogram",False,,,,,,-,-,Semua MP Minggu Itu: IO-01,177529,1,3,Problem Solving Week 1-2 Ultimate,Ultimate,2,10,2026-09-27 21:30:54,First Submit First Attempt,9,Menentukan Apakah Bilangan Kedua Merupakan Faktor Bilangan Pertama,0,"program digit
+kamus
+    x, y, hasil: integer
+algoritma
+    input(x, y)
+    if x mod y = 0 then
+        hasil = 1
+    else
+        hasil = 0
+    endif
+    output(hasil)
+endprogram",True,5.0,Wrong with Misconception,First Submit First Attempt,Incorrect (Mark: 0),wrong,OP-01,Juan,"Relevan KC (VA, OP, EX, IO, SQ): IO-01 | Semua MP Minggu Itu: IO-01",0.8400149941444397,1,8,41.4,hasil = (depan * 1000) + (b * 100) + belakang
+BS1IF-50-REG01_103012500250,103012500250,JULIAN FERDIYANTO,BS1IF-50-REG01,IO-01,14,177529,1,3,Problem Solving Week 1-2 Ultimate,Ultimate,2,10,2026-09-27 21:30:54,First Submit First Attempt,9,Menentukan Apakah Bilangan Kedua Merupakan Faktor Bilangan Pertama,0,"program digit
+kamus
+    x, y, hasil: integer
+algoritma
+    input(x, y)
+    if x mod y = 0 then
+        hasil = 1
+    else
+        hasil = 0
+    endif
+    output(hasil)
+endprogram",True,5.0,Wrong with Misconception,First Submit First Attempt,Incorrect (Mark: 0),wrong,OP-01,Juan,"Relevan KC (VA, OP, EX, IO, SQ): IO-01 | Semua MP Minggu Itu: IO-01",177529,1,3,Problem Solving Week 1-2 Ultimate,Ultimate,3,10,2026-09-27 21:30:54,Final Submit,9,Menentukan Apakah Bilangan Kedua Merupakan Faktor Bilangan Pertama,0,"program faktor
+kamus
+    x, y: integer
+algoritma
+    input(x, y)
+    if (x mod y = 0) then
+        output(1)
+    else
+        output(0)
+    endif
+endprogram",True,6.0,Wrong with Misconception,Final Submit,"Incorrect (Mark: 0, Attempt #1)",wrong,OP-01,Juan,"Relevan KC (VA, OP, EX, IO, SQ): IO-01 | Semua MP Minggu Itu: IO-01",0.18728730082511902,0,6,27.0,if x mod y = 0 then
+BS1IF-50-REG01_103012500250,103012500250,JULIAN FERDIYANTO,BS1IF-50-REG01,IO-01,15,177529,1,3,Problem Solving Week 1-2 Ultimate,Ultimate,3,10,2026-09-27 21:30:54,Final Submit,9,Menentukan Apakah Bilangan Kedua Merupakan Faktor Bilangan Pertama,0,"program faktor
+kamus
+    x, y: integer
+algoritma
+    input(x, y)
+    if (x mod y = 0) then
+        output(1)
+    else
+        output(0)
+    endif
+endprogram",True,6.0,Wrong with Misconception,Final Submit,"Incorrect (Mark: 0, Attempt #1)",wrong,OP-01,Juan,"Relevan KC (VA, OP, EX, IO, SQ): IO-01 | Semua MP Minggu Itu: IO-01",177529,1,3,Problem Solving Week 1-2 Ultimate,Ultimate,4,10,2026-09-27 22:52:31,First Submit First Attempt,17,Pertukaran Isi Tiga Variabel,0,"program tukar
+kamus
+    x, y, z, temp: integer
+algoritma
+    input(x, y, z)
+    temp = y
+    y = z
+    x = z
+    z = temp
+    output(x, y, z)
+endprogram",True,7.0,Wrong with Misconception,First Submit First Attempt,Incorrect (Mark: 0),wrong,VA-08,Juan,"Relevan KC (VA, EX, IO, SQ): IO-01 | Semua MP Minggu Itu: IO-01",0.33116278052330017,0,6,29.3,if (x mod y = 0) then
+BS1IF-50-REG01_103012500250,103012500250,JULIAN FERDIYANTO,BS1IF-50-REG01,IO-01,16,177529,1,3,Problem Solving Week 1-2 Ultimate,Ultimate,4,10,2026-09-27 22:52:31,First Submit First Attempt,17,Pertukaran Isi Tiga Variabel,0,"program tukar
+kamus
+    x, y, z, temp: integer
+algoritma
+    input(x, y, z)
+    temp = y
+    y = z
+    x = z
+    z = temp
+    output(x, y, z)
+endprogram",True,7.0,Wrong with Misconception,First Submit First Attempt,Incorrect (Mark: 0),wrong,VA-08,Juan,"Relevan KC (VA, EX, IO, SQ): IO-01 | Semua MP Minggu Itu: IO-01",177529,1,3,Problem Solving Week 1-2 Ultimate,Ultimate,5,10,2026-09-27 22:52:31,Final Submit,17,Pertukaran Isi Tiga Variabel,1,"program tukar
+kamus
+    x, y, z, temp: integer
+algoritma
+    input(x, y, z)
+    temp = y
+    y = x
+    x = z
+    z = temp
+    output(x, y, z)
+endprogram",False,,,,,,-,-,"Relevan KC (VA, EX, IO, SQ): IO-01 | Semua MP Minggu Itu: IO-01",0.24194703996181488,0,10,24.6,"output(x, y, z)"
+BS1IF-50-REG01_103012600002,103012600002,RIFKI NAJWAN SETIAWAN,BS1IF-50-REG01,VA-12,1,137904,1,1,Problem Solving Week 1-2 Easy,Easy,1,8,2026-09-25 22:24:24,First Submit First Attempt,13,Pembagian Burger per Anggota Keluarga (div),0,"program anggota
+kamus
+    y, x, jumlah : integer
+algoritma
+    input(y, x)
+    jumlah=(y/x)",True,8.0,Wrong with Misconception,First Submit First Attempt,Incorrect (Mark: 0),wrong,IO-05,Juan,"Relevan KC (VA, OP, EX, IO, SQ): VA-12 | Semua MP Minggu Itu: VA-12",137904,1,1,Problem Solving Week 1-2 Easy,Easy,2,8,2026-09-25 22:24:24,Final Submit,13,Pembagian Burger per Anggota Keluarga (div),0,"program anggota
+kamus
+    x, y, jumlah : integer
+algoritma
+    input(x, y)
+    jumlah = x / y
+    output(jumlah)
+endprogram",False,,,,,,-,-,"Relevan KC (VA, OP, EX, IO, SQ): VA-12 | Semua MP Minggu Itu: VA-12",0.1158016175031662,0,6,47.8,jumlah=(y/x)
+BS1IF-50-REG01_103012600002,103012600002,RIFKI NAJWAN SETIAWAN,BS1IF-50-REG01,VA-12,15,158839,2,2,Problem Solving Week 1-2 Easy,Easy,7,7,2026-09-26 11:04:13,Final Submit,18,Sisa Pembagian Kue (mod),1,"program cookies
+kamus
+    x,y,hasil : integer
+algoritma
+    input(x,y)
+    hasil = x mod y
+    output(hasil)
+endprogram",False,,,,,,-,-,Semua MP Minggu Itu: VA-12,163212,1,3,Problem Solving Week 1-2 Challenger,Challenger,1,5,2026-09-26 15:44:43,First Submit First Attempt,2,Kalkulator Pecahan (a/b dan c/d),0,"program kalkulator
+kamus
+    a,b,c,d,hasil1,tampilan1,hasil2,tampilan2,hasil3,tampilan3,hasil4,tampilan4 : integer
+algoritma
+    input(a,b,c,d)
+    hasil1 = a * b + c * d
+    tampilan1 = b * d
+    output(addition:)
+    output(hasil1)
+    output(""/"")
+    output(tampilan1)
+
+    hasil2 = a * b - c * d
+    tampilan2 = b * d
+    output(substraction:)
+    output(hasil2)
+    output(""/"")
+    output(tampilan2)
+
+    hasil3 = a * c
+    tampilan3 = b * d
+    output(multiplication:)
+    output(hasil3)
+    output(""/"")
+    output(tampilan3)
+
+    hasil4 = a * d
+    tampilan4 = b * c
+    output(substraction:)
+    output(hasil4)
+    output(""/"")
+    output(tampilan4)
+endprogram",True,9.0,Wrong with Misconception,First Submit First Attempt,Incorrect (Mark: 0),wrong,VA-12,Juan,"Relevan KC (VA, OP, EX, IO, SQ): VA-12 | Semua MP Minggu Itu: VA-12",0.8393011093139648,1,6,31.6,hasil = x mod y
+BS1IF-50-REG01_103012600002,103012600002,RIFKI NAJWAN SETIAWAN,BS1IF-50-REG01,VA-12,16,163212,1,3,Problem Solving Week 1-2 Challenger,Challenger,1,5,2026-09-26 15:44:43,First Submit First Attempt,2,Kalkulator Pecahan (a/b dan c/d),0,"program kalkulator
+kamus
+    a,b,c,d,hasil1,tampilan1,hasil2,tampilan2,hasil3,tampilan3,hasil4,tampilan4 : integer
+algoritma
+    input(a,b,c,d)
+    hasil1 = a * b + c * d
+    tampilan1 = b * d
+    output(addition:)
+    output(hasil1)
+    output(""/"")
+    output(tampilan1)
+
+    hasil2 = a * b - c * d
+    tampilan2 = b * d
+    output(substraction:)
+    output(hasil2)
+    output(""/"")
+    output(tampilan2)
+
+    hasil3 = a * c
+    tampilan3 = b * d
+    output(multiplication:)
+    output(hasil3)
+    output(""/"")
+    output(tampilan3)
+
+    hasil4 = a * d
+    tampilan4 = b * c
+    output(substraction:)
+    output(hasil4)
+    output(""/"")
+    output(tampilan4)
+endprogram",True,9.0,Wrong with Misconception,First Submit First Attempt,Incorrect (Mark: 0),wrong,VA-12,Juan,"Relevan KC (VA, OP, EX, IO, SQ): VA-12 | Semua MP Minggu Itu: VA-12",163212,1,3,Problem Solving Week 1-2 Challenger,Challenger,2,5,2026-09-26 15:44:43,Final Submit,2,Kalkulator Pecahan (a/b dan c/d),1,"program kalkulator
+kamus
+    a,b,c,d,hasil1,tampilan1,hasil2,tampilan2,hasil3,tampilan3,hasil4,tampilan4 : integer
+algoritma
+    input(a,b,c,d)
+    hasil1 = a * d + c * b
+    tampilan1 = b * d
+    output(""addition:"")
+    output(hasil1)
+    output(""/"")
+    output(tampilan1)
+
+    hasil2 = a * d - c * b
+    tampilan2 = b * d
+    output(""subtraction:"")
+    output(hasil2)
+    output(""/"")
+    output(tampilan2)
+
+    hasil3 = a * c
+    tampilan3 = b * d
+    output(""multiplication:"")
+    output(hasil3)
+    output(""/"")
+    output(tampilan3)
+
+    hasil4 = a * d
+    tampilan4 = b * c
+    output(""division:"")
+    output(hasil4)
+    output(""/"")
+    output(tampilan4)
+endprogram",True,10.0,Correct with Misconception,Final Submit,"Correct (Mark: 1, Attempt #1)",correct,VA-12,Juan,"Relevan KC (VA, OP, EX, IO, SQ): VA-12 | Semua MP Minggu Itu: VA-12",0.6666449904441833,1,3,13.7,"a,b,c,d,hasil1,tampilan1,hasil2,tampilan2,hasil3,tampilan3,hasil4,tampilan4 : integer"
+BS1IF-50-REG01_103012600002,103012600002,RIFKI NAJWAN SETIAWAN,BS1IF-50-REG01,VA-12,17,163212,1,3,Problem Solving Week 1-2 Challenger,Challenger,2,5,2026-09-26 15:44:43,Final Submit,2,Kalkulator Pecahan (a/b dan c/d),1,"program kalkulator
+kamus
+    a,b,c,d,hasil1,tampilan1,hasil2,tampilan2,hasil3,tampilan3,hasil4,tampilan4 : integer
+algoritma
+    input(a,b,c,d)
+    hasil1 = a * d + c * b
+    tampilan1 = b * d
+    output(""addition:"")
+    output(hasil1)
+    output(""/"")
+    output(tampilan1)
+
+    hasil2 = a * d - c * b
+    tampilan2 = b * d
+    output(""subtraction:"")
+    output(hasil2)
+    output(""/"")
+    output(tampilan2)
+
+    hasil3 = a * c
+    tampilan3 = b * d
+    output(""multiplication:"")
+    output(hasil3)
+    output(""/"")
+    output(tampilan3)
+
+    hasil4 = a * d
+    tampilan4 = b * c
+    output(""division:"")
+    output(hasil4)
+    output(""/"")
+    output(tampilan4)
+endprogram",True,10.0,Correct with Misconception,Final Submit,"Correct (Mark: 1, Attempt #1)",correct,VA-12,Juan,"Relevan KC (VA, OP, EX, IO, SQ): VA-12 | Semua MP Minggu Itu: VA-12",163212,1,3,Problem Solving Week 1-2 Challenger,Challenger,3,5,2026-09-26 15:50:41,Final Submit,7,Membaca dan Mencetak Karakter,1,"program karakter
+kamus
+    x,hasil : character
+algoritma
+    input(x)
+    hasil = x
+    output(hasil)
+endprogram",False,,,,,,-,-,Semua MP Minggu Itu: VA-12,0.9841094613075256,1,3,13.9,"a,b,c,d,hasil1,tampilan1,hasil2,tampilan2,hasil3,tampilan3,hasil4,tampilan4 : integer"
+BS1IF-50-REG01_103012600002,103012600002,RIFKI NAJWAN SETIAWAN,BS1IF-50-REG01,VA-12,20,163212,1,3,Problem Solving Week 1-2 Challenger,Challenger,5,5,2026-09-26 16:30:27,Final Submit,15,Persamaan y = (x² + 1/x)²,1,"program hitung
+kamus
+    x,hasil : real
+algoritma
+    input(x)
+    hasil = (x*x + 1/x) * (x*x + 1/x)
+    output(hasil)
+endprogram",False,,,,,,-,-,Semua MP Minggu Itu: VA-12,164410,1,4,Problem Solving Week 1-2 Ultimate,Ultimate,1,6,2026-09-26 16:34:41,First Submit First Attempt,0,Denominasi Uang Kembalian,0,"program kembalian
+kamus
+    x,hasil1,hasil2,hasil3 : integer
+algoritma
+    hasil1 = x div 10000
+    hasil2 = hasil1 mod 5000
+    hasil3 = hasil2 mod 1000
+    output(hasil1)
+    output(hasil2)
+    output(hasil3)
+endprogram",True,11.0,Wrong with Misconception,First Submit First Attempt,Incorrect (Mark: 0),wrong,VA-12,Juan,"Relevan KC (VA, OP, EX, IO, SQ): VA-12 | Semua MP Minggu Itu: VA-12",0.9546409845352173,1,6,80.4,hasil = (x*x + 1/x) * (x*x + 1/x)
+BS1IF-50-REG01_103012600002,103012600002,RIFKI NAJWAN SETIAWAN,BS1IF-50-REG01,VA-12,21,164410,1,4,Problem Solving Week 1-2 Ultimate,Ultimate,1,6,2026-09-26 16:34:41,First Submit First Attempt,0,Denominasi Uang Kembalian,0,"program kembalian
+kamus
+    x,hasil1,hasil2,hasil3 : integer
+algoritma
+    hasil1 = x div 10000
+    hasil2 = hasil1 mod 5000
+    hasil3 = hasil2 mod 1000
+    output(hasil1)
+    output(hasil2)
+    output(hasil3)
+endprogram",True,11.0,Wrong with Misconception,First Submit First Attempt,Incorrect (Mark: 0),wrong,VA-12,Juan,"Relevan KC (VA, OP, EX, IO, SQ): VA-12 | Semua MP Minggu Itu: VA-12",164410,1,4,Problem Solving Week 1-2 Ultimate,Ultimate,2,6,2026-09-26 16:34:41,Final Submit,0,Denominasi Uang Kembalian,1,"program kembalian
+kamus
+    x,hasil1,hasil2,hasil3 : integer
+algoritma
+    input(x)
+    hasil1 = x div 10000
+    hasil2 = (x mod 10000) div 5000
+    hasil3 = ((x mod 10000) mod 5000) div 1000
+    output(hasil1)
+    output(hasil2)
+    output(hasil3)
+endprogram",False,,,,,,-,-,"Relevan KC (VA, OP, EX, IO, SQ): VA-12 | Semua MP Minggu Itu: VA-12",0.7529209852218628,1,7,16.8,hasil3 = hasil2 mod 1000
+BS1IF-50-REG01_103012600012,103012600012,QURRATU ' AIN,BS1IF-50-REG01,"VA-06, EX-01, IO-02, VA-12, VA-05, VA-14",5,136138,1,1,Problem Solving Week 1-2 Easy,Easy,5,8,2026-09-24 17:48:22,Final Submit,6,Konversi Suhu Celsius ke Kelvin,1,"program kelvin
+kamus
+   celcius:real
+   kelvin:real
+algoritma
+    input(celcius)
+    kelvin=celcius+273.0
+    output(kelvin)
+endprogram",False,,,,,,-,-,"Semua MP Minggu Itu: VA-06, EX-01, IO-02, VA-12, VA-05, VA-14",136138,1,1,Problem Solving Week 1-2 Easy,Easy,6,8,2026-09-24 17:53:19,First Submit First Attempt,18,Sisa Pembagian Kue (mod),0,"program kukis
+kamus
+  y,x,hasil : integer
+algoritma
+  input(y,x)
+  hasil=y mod x
+endprogram",True,12.0,Wrong with Misconception,First Submit First Attempt,Incorrect (Mark: 0),wrong,OP-01,Juan,"Relevan KC (VA, OP, EX, IO, SQ): VA-06, VA-12, VA-05, VA-14, EX-01, IO-02 | Semua MP Minggu Itu: VA-06, EX-01, IO-02, VA-12, VA-05, VA-14",0.9770876169204712,1,7,36.8,kelvin=celcius+273.0
+BS1IF-50-REG01_103012600012,103012600012,QURRATU ' AIN,BS1IF-50-REG01,"VA-06, EX-01, IO-02, VA-12, VA-05, VA-14",6,136138,1,1,Problem Solving Week 1-2 Easy,Easy,6,8,2026-09-24 17:53:19,First Submit First Attempt,18,Sisa Pembagian Kue (mod),0,"program kukis
+kamus
+  y,x,hasil : integer
+algoritma
+  input(y,x)
+  hasil=y mod x
+endprogram",True,12.0,Wrong with Misconception,First Submit First Attempt,Incorrect (Mark: 0),wrong,OP-01,Juan,"Relevan KC (VA, OP, EX, IO, SQ): VA-06, VA-12, VA-05, VA-14, EX-01, IO-02 | Semua MP Minggu Itu: VA-06, EX-01, IO-02, VA-12, VA-05, VA-14",136138,1,1,Problem Solving Week 1-2 Easy,Easy,7,8,2026-09-24 17:53:19,Final Submit,18,Sisa Pembagian Kue (mod),1,"program kukis
+kamus
+  y,x,hasil : integer
+algoritma
+  input(y,x)
+  hasil=y mod x
+  output(hasil)
+endprogram",False,,,,,,-,-,"Relevan KC (VA, OP, EX, IO, SQ): VA-06, VA-12, VA-05, VA-14, EX-01, IO-02 | Semua MP Minggu Itu: VA-06, EX-01, IO-02, VA-12, VA-05, VA-14",0.7337524890899658,1,6,40.4,hasil=y mod x
+BS1IF-50-REG01_103012600012,103012600012,QURRATU ' AIN,BS1IF-50-REG01,"VA-06, EX-01, IO-02, VA-12, VA-05, VA-14",8,136138,1,1,Problem Solving Week 1-2 Easy,Easy,8,8,2026-09-24 17:58:34,Final Submit,14,Penjumlahan Empat Bilangan Bulat,1,"program bulat
+kamus
+  a,b,c,d : integer
+  hasil : integer
+algoritma
+   input(a,b,c,d)
+   hasil=a+b+c+d
+   output(hasil)
+ endprogram",False,,,,,,-,-,"Semua MP Minggu Itu: VA-06, EX-01, IO-02, VA-12, VA-05, VA-14",138516,1,2,Problem Solving Week 1-2 Challenger,Challenger,1,6,2026-09-24 19:45:36,First Submit First Attempt,2,Kalkulator Pecahan (a/b dan c/d),0,"pemograman perhitungan
+kamus
+  a,i,o,u : integer
+  m1,n2,m2,n2,m3,n3,m4,n4 : integer
+algoritma
+ input(a,i,o,u)
+ m1=(a*o)+(o*i)
+ n1=i*u
+ m2=(a*o)-(o*i)
+ n2=i*u
+ m3=a*o
+ n3=i*o
+ m4=a*u
+ n4=i*u
+ output(""addition: "")
+ output(m1)
+ output(""/"")
+ output(n1)
+ output(""subtraction: "")
+ output(m2)
+ output(""/"")
+ output(n2)
+ output(""multiplication: "")
+ output(m3)
+ output(""/"")
+ output(n3)
+ output(""division: "")
+ output(m4)
+ output(""/"")
+ output(n4)
+endprogram",True,13.0,Wrong with Misconception,First Submit First Attempt,Incorrect (Mark: 0),wrong,VA-12,Juan,"Relevan KC (VA, OP, EX, IO, SQ): VA-06, VA-12, VA-05, VA-14, EX-01, IO-02 | Semua MP Minggu Itu: VA-06, EX-01, IO-02, VA-12, VA-05, VA-14",0.8309792876243591,1,7,44.0,hasil=a+b+c+d
+BS1IF-50-REG01_103012600012,103012600012,QURRATU ' AIN,BS1IF-50-REG01,"VA-06, EX-01, IO-02, VA-12, VA-05, VA-14",9,138516,1,2,Problem Solving Week 1-2 Challenger,Challenger,1,6,2026-09-24 19:45:36,First Submit First Attempt,2,Kalkulator Pecahan (a/b dan c/d),0,"pemograman perhitungan
+kamus
+  a,i,o,u : integer
+  m1,n2,m2,n2,m3,n3,m4,n4 : integer
+algoritma
+ input(a,i,o,u)
+ m1=(a*o)+(o*i)
+ n1=i*u
+ m2=(a*o)-(o*i)
+ n2=i*u
+ m3=a*o
+ n3=i*o
+ m4=a*u
+ n4=i*u
+ output(""addition: "")
+ output(m1)
+ output(""/"")
+ output(n1)
+ output(""subtraction: "")
+ output(m2)
+ output(""/"")
+ output(n2)
+ output(""multiplication: "")
+ output(m3)
+ output(""/"")
+ output(n3)
+ output(""division: "")
+ output(m4)
+ output(""/"")
+ output(n4)
+endprogram",True,13.0,Wrong with Misconception,First Submit First Attempt,Incorrect (Mark: 0),wrong,VA-12,Juan,"Relevan KC (VA, OP, EX, IO, SQ): VA-06, VA-12, VA-05, VA-14, EX-01, IO-02 | Semua MP Minggu Itu: VA-06, EX-01, IO-02, VA-12, VA-05, VA-14",138516,1,2,Problem Solving Week 1-2 Challenger,Challenger,2,6,2026-09-24 19:45:36,Final Submit,2,Kalkulator Pecahan (a/b dan c/d),1,"program perhitungan
+kamus
+  a,i,o,u : integer
+  m1,n1,m2,n2,m3,n3,m4,n4 : integer
+algoritma
+  input(a,i,o,u)
+  m1=(a*u)+(o*i)
+  n1=i*u
+  m2=(a*u)-(o*i)
+  n2=i*u
+  m3=a*o
+  n3=i*u
+  m4=a*u
+  n4=i*o
+  output(""addition:"")
+  output(m1)
+  output(""/"")
+  output(n1)
+  output(""subtraction:"")
+  output(m2)
+  output(""/"")
+  output(n2)
+  output(""multiplication:"")
+  output(m3)
+  output(""/"")
+  output(n3)
+  output(""division:"")
+  output(m4)
+  output(""/"")
+  output(n4)
+endprogram",True,14.0,Correct with Misconception,Final Submit,"Correct (Mark: 1, Attempt #1)",correct,-,-,"Relevan KC (VA, OP, EX, IO, SQ): VA-06, VA-12, VA-05, VA-14, EX-01, IO-02 | Semua MP Minggu Itu: VA-06, EX-01, IO-02, VA-12, VA-05, VA-14",0.7306820154190063,1,6,9.1,"input(a,i,o,u)"
+BS1IF-50-REG01_103012600021,103012600021,ADITYA ZUHRI,BS1IF-50-REG01,"EX-04, IO-05, VA-12, SQ-03",25,263372,2,5,Problem Solving Week 1-2 Ultimate,Ultimate,1,8,2026-10-03 10:20:11,Final Submit,9,Menentukan Apakah Bilangan Kedua Merupakan Faktor Bilangan Pertama,1,"program bilanganbulat
+kamus
+    x, y, sisa, hasil : integer
+algoritma
+    input(x, y)
+    sisa <- x mod y
+    hasil <- 1 - ((sisa + y - 1) div y )
+    output(hasil)
+endprogram",False,,,,,,-,-,"Semua MP Minggu Itu: EX-04, IO-05, VA-12, SQ-03",263372,2,5,Problem Solving Week 1-2 Ultimate,Ultimate,2,8,2026-10-03 10:29:32,Final Submit,17,Pertukaran Isi Tiga Variabel,1,"program tigavariabel
+kamus
+    x, y, z : integer
+    a, b, c : integer
+algoritma
+    input(x, y, z)
+    a <- z
+    b <- x
+    c <- y
+    output(a)
+    output(b)
+    output(c)
+endprogram",True,23.0,Correct with Misconception,Final Submit,"Correct (Mark: 1, Attempt #2)",correct,VA-12,Juan,"Relevan KC (VA, EX, IO, SQ): VA-12, EX-04, IO-05, SQ-03 | Semua MP Minggu Itu: EX-04, IO-05, VA-12, SQ-03",0.791325032711029,1,7,51.2,hasil <- 1 - ((sisa + y - 1) div y )
+BS1IF-50-REG01_103012600021,103012600021,ADITYA ZUHRI,BS1IF-50-REG01,"EX-04, IO-05, VA-12, SQ-03",26,263372,2,5,Problem Solving Week 1-2 Ultimate,Ultimate,2,8,2026-10-03 10:29:32,Final Submit,17,Pertukaran Isi Tiga Variabel,1,"program tigavariabel
+kamus
+    x, y, z : integer
+    a, b, c : integer
+algoritma
+    input(x, y, z)
+    a <- z
+    b <- x
+    c <- y
+    output(a)
+    output(b)
+    output(c)
+endprogram",True,23.0,Correct with Misconception,Final Submit,"Correct (Mark: 1, Attempt #2)",correct,VA-12,Juan,"Relevan KC (VA, EX, IO, SQ): VA-12, EX-04, IO-05, SQ-03 | Semua MP Minggu Itu: EX-04, IO-05, VA-12, SQ-03",263372,2,5,Problem Solving Week 1-2 Ultimate,Ultimate,3,8,2026-10-03 11:03:55,Final Submit,12,Menyisipkan Satu Digit di Tengah Bilangan Empat Digit,1,"program menyisipkan_angka
+kamus
+    x, y, kiri, kanan, hasil : integer
+algoritma
+    input(x, y)
+    kiri <- x div 100
+    kanan <- x mod 100
+    hasil <- (kiri * 10 + y) * 100 + kanan
+    output(hasil)
+endprogram",False,,,,,,-,-,"Semua MP Minggu Itu: EX-04, IO-05, VA-12, SQ-03",0.9197356104850769,1,6,20.6,"input(x, y, z)"
+BS1IF-50-REG01_103012600049,103012600049,KEYSHA HANADYA NASHIRA,BS1IF-50-REG01,VA-03,18,172915,1,3,Problem Solving Week 1-2 Challenger,Challenger,4,4,2026-09-27 19:20:41,Final Submit,15,Persamaan y = (x² + 1/x)²,1,"program operasi
+kamus
+    x, y : real
+algoritma
+    input (x)
+    y = ((x*x) + 1 / x) * ((x*x) + 1 / x)
+    output (y)
+endprogram",False,,,,,,-,-,Semua MP Minggu Itu: VA-03,175958,1,4,Problem Solving Week 1-2 Ultimate,Ultimate,1,2,2026-09-27 19:44:17,First Submit First Attempt,0,Denominasi Uang Kembalian,0,"program kembalian
+kamus
+    kembalian, sepuluh, lima, satu : integer
+algoritma
+    input (kembalian)
+    sepuluh ← kembalian DIV 10000
+    kembalian ← kembalian MOD 10000
+    lima ← kembalian DIV 5000
+    kembalian ← kembalian MOD 5000
+    satu ← kembalian DIV 1000
+    input (sepuluh)
+    input (lima)
+    input (satu)
+    output Jumlah lembar Rp10.000
+    output Jumlah lembar Rp5.000
+    output Jumlah lembar Rp1.000
+endprogram",True,24.0,Wrong with Misconception,First Submit First Attempt,Incorrect (Mark: 0),wrong,SQ-01,Juan,"Relevan KC (VA, OP, EX, IO, SQ): VA-03 | Semua MP Minggu Itu: VA-03",0.9587507843971252,1,6,80.9,y = ((x*x) + 1 / x) * ((x*x) + 1 / x)
+BS1IF-50-REG01_103012600049,103012600049,KEYSHA HANADYA NASHIRA,BS1IF-50-REG01,VA-03,19,175958,1,4,Problem Solving Week 1-2 Ultimate,Ultimate,1,2,2026-09-27 19:44:17,First Submit First Attempt,0,Denominasi Uang Kembalian,0,"program kembalian
+kamus
+    kembalian, sepuluh, lima, satu : integer
+algoritma
+    input (kembalian)
+    sepuluh ← kembalian DIV 10000
+    kembalian ← kembalian MOD 10000
+    lima ← kembalian DIV 5000
+    kembalian ← kembalian MOD 5000
+    satu ← kembalian DIV 1000
+    input (sepuluh)
+    input (lima)
+    input (satu)
+    output Jumlah lembar Rp10.000
+    output Jumlah lembar Rp5.000
+    output Jumlah lembar Rp1.000
+endprogram",True,24.0,Wrong with Misconception,First Submit First Attempt,Incorrect (Mark: 0),wrong,SQ-01,Juan,"Relevan KC (VA, OP, EX, IO, SQ): VA-03 | Semua MP Minggu Itu: VA-03",175958,1,4,Problem Solving Week 1-2 Ultimate,Ultimate,2,2,2026-09-27 19:44:17,Final Submit,0,Denominasi Uang Kembalian,0,"program kembalian
+kamus
+    kembalian, lembar10, lembar5, lembar1, sisa : integer
+algoritma
+    lembar10 ← kembalian div 10000
+    sisa ← kembalian mod 10000
+    lembar5 ← sisa DIV 5000
+    sisa ← sisa MOD 5000
+    lembar1 ← sisa DIV 1000
+    output (lembar10)
+    output (lembar5)
+    output (lembar1)
+endprogram",False,,,,,,-,-,"Relevan KC (VA, OP, EX, IO, SQ): VA-03 | Semua MP Minggu Itu: VA-03",0.7567940354347229,1,14,21.5,output Jumlah lembar Rp10.000
+BS1IF-50-REG01_103012600084,103012600084,ZIDAN RIZKY WIBOWO,BS1IF-50-REG01,Tidak ada miskonsepsi,9,141737,1,2,Problem Solving Week 1-2 Challenger,Challenger,2,4,2026-09-24 22:54:32,Final Submit,1,Fungsi,1,"program Fungsi
+kamus
+    x : real
+    fd : real
+algoritma
+    input (x)
+    fd = ((x*x*x) + (3*x)) / ((x*x*x*x) - (3*x*x) + 4)
+    output (fd)
+endprogram",False,,,,,,-,-,Semua MP Minggu Itu: Tidak ada miskonsepsi,141737,1,2,Problem Solving Week 1-2 Challenger,Challenger,3,4,2026-09-25 16:09:16,Final Submit,2,Kalkulator Pecahan (a/b dan c/d),1,"program Kalkulator
+
+kamus
+    a,b,c,d : integer
+    a_pembilang,a_penyebut : integer
+    s_pembilang,s_penyebut : integer
+    m_pembilang,m_penyebut : integer
+    d_pembilang,d_penyebut : integer
+
+algoritma
+
+    input(a,b,c,d)
+
+    a_pembilang = (a*d)+(c*b)
+    a_penyebut = b*d
+
+    s_pembilang = (a*d)-(c*b)
+    s_penyebut = b*d
+
+    m_pembilang = a*c
+    m_penyebut = b*d
+
+    d_pembilang = a*d
+    d_penyebut = b*c
+
+    output(""addition:"")
+    output(a_pembilang)
+    output(""/"")
+    output(a_penyebut)
+
+    output(""subtraction:"")
+    output(s_pembilang)
+    output(""/"")
+    output(s_penyebut)
+
+    output(""multiplication:"")
+    output(m_pembilang)
+    output(""/"")
+    output(m_penyebut)
+
+    output(""division:"")
+    output(d_pembilang)
+    output(""/"")
+    output(d_penyebut)
+    endprogram",True,25.0,Wrong with Misconception,Final Submit,"Correct (Mark: 1, Attempt #1)",wrong,VA-12,Juan,"Relevan KC (VA, OP, EX, IO, SQ): Tidak ada miskonsepsi pada KC soal ini | Semua MP Minggu Itu: Tidak ada miskonsepsi",0.8710005283355713,1,7,87.7,fd = ((x*x*x) + (3*x)) / ((x*x*x*x) - (3*x*x) + 4)
+BS1IF-50-REG01_103012600084,103012600084,ZIDAN RIZKY WIBOWO,BS1IF-50-REG01,Tidak ada miskonsepsi,10,141737,1,2,Problem Solving Week 1-2 Challenger,Challenger,3,4,2026-09-25 16:09:16,Final Submit,2,Kalkulator Pecahan (a/b dan c/d),1,"program Kalkulator
+
+kamus
+    a,b,c,d : integer
+    a_pembilang,a_penyebut : integer
+    s_pembilang,s_penyebut : integer
+    m_pembilang,m_penyebut : integer
+    d_pembilang,d_penyebut : integer
+
+algoritma
+
+    input(a,b,c,d)
+
+    a_pembilang = (a*d)+(c*b)
+    a_penyebut = b*d
+
+    s_pembilang = (a*d)-(c*b)
+    s_penyebut = b*d
+
+    m_pembilang = a*c
+    m_penyebut = b*d
+
+    d_pembilang = a*d
+    d_penyebut = b*c
+
+    output(""addition:"")
+    output(a_pembilang)
+    output(""/"")
+    output(a_penyebut)
+
+    output(""subtraction:"")
+    output(s_pembilang)
+    output(""/"")
+    output(s_penyebut)
+
+    output(""multiplication:"")
+    output(m_pembilang)
+    output(""/"")
+    output(m_penyebut)
+
+    output(""division:"")
+    output(d_pembilang)
+    output(""/"")
+    output(d_penyebut)
+    endprogram",True,25.0,Wrong with Misconception,Final Submit,"Correct (Mark: 1, Attempt #1)",wrong,VA-12,Juan,"Relevan KC (VA, OP, EX, IO, SQ): Tidak ada miskonsepsi pada KC soal ini | Semua MP Minggu Itu: Tidak ada miskonsepsi",141737,1,2,Problem Solving Week 1-2 Challenger,Challenger,4,4,2026-09-25 21:32:22,Final Submit,15,Persamaan y = (x² + 1/x)²,1,"program Hitung
+kamus
+    x,y : real
+algoritma
+    input(x)
+    y = ((x*x)+1/x)*((x*x)+1/x)
+    output (y)
+endprogram",False,,,,,,-,-,Semua MP Minggu Itu: Tidak ada miskonsepsi,0.9744215607643127,1,12,9.7,"input(a,b,c,d)"
+BS1IF-50-REG01_103012600136,103012600136,ROSMALA DEWI,BS1IF-50-REG01,"VA-06, IO-02, SQ-03",14,136201,2,2,Problem Solving Week 1-2 Easy,Easy,7,7,2026-09-24 17:46:26,Final Submit,13,Pembagian Burger per Anggota Keluarga (div),1,"program MembagiBurger
+kamus
+    y,x: integer
+    burger_diterima: integer
+algoritma
+    input(y,x)
+    burger_diterima=y div x
+    output(burger_diterima)
+endprogram",False,,,,,,-,-,"Semua MP Minggu Itu: VA-06, IO-02, SQ-03",137538,1,3,Problem Solving Week 1-2 Challenger,Challenger,1,5,2026-09-24 19:16:33,First Submit First Attempt,2,Kalkulator Pecahan (a/b dan c/d),0,"program Kalkulator
+kamus
+    a,b,c,d: integer
+    a_pembilang,a_penyebut: integer
+    s_pembilang,s_penyebut: integer
+    m_pembilang,m_penyebut: integer
+    d_pembilang,d_penyebut: integer
+algoritma
+input (a,b,c,d)
+a_pembilang=(a*d)+(c*b)
+a_penyebut=(b*d)
+s_pembilang=(a*d)-(c*b)
+s_penyebut=(b*d)
+m_pembilang=(a*c)
+m_penyebut=(b*d)
+d_pembilang=(a*d)
+d_penyebut=(b*c)
+output(""addition""a_pembilang""/""a_penyebut)
+output(""subtraction""s_pembilang""/""s_penyebut)
+output(""multiplication""m_pembilang""/""m_penyebut)
+output(""division""d_pembilang""/""d_penyebut)
+endprogram",True,32.0,Wrong with Misconception,First Submit First Attempt,Incorrect (Mark: 0),wrong,VA-12,Juan,"Relevan KC (VA, OP, EX, IO, SQ): VA-06, IO-02, SQ-03 | Semua MP Minggu Itu: VA-06, IO-02, SQ-03",0.8524329662322998,1,7,30.8,burger_diterima=y div x
+BS1IF-50-REG01_103012600136,103012600136,ROSMALA DEWI,BS1IF-50-REG01,"VA-06, IO-02, SQ-03",15,137538,1,3,Problem Solving Week 1-2 Challenger,Challenger,1,5,2026-09-24 19:16:33,First Submit First Attempt,2,Kalkulator Pecahan (a/b dan c/d),0,"program Kalkulator
+kamus
+    a,b,c,d: integer
+    a_pembilang,a_penyebut: integer
+    s_pembilang,s_penyebut: integer
+    m_pembilang,m_penyebut: integer
+    d_pembilang,d_penyebut: integer
+algoritma
+input (a,b,c,d)
+a_pembilang=(a*d)+(c*b)
+a_penyebut=(b*d)
+s_pembilang=(a*d)-(c*b)
+s_penyebut=(b*d)
+m_pembilang=(a*c)
+m_penyebut=(b*d)
+d_pembilang=(a*d)
+d_penyebut=(b*c)
+output(""addition""a_pembilang""/""a_penyebut)
+output(""subtraction""s_pembilang""/""s_penyebut)
+output(""multiplication""m_pembilang""/""m_penyebut)
+output(""division""d_pembilang""/""d_penyebut)
+endprogram",True,32.0,Wrong with Misconception,First Submit First Attempt,Incorrect (Mark: 0),wrong,VA-12,Juan,"Relevan KC (VA, OP, EX, IO, SQ): VA-06, IO-02, SQ-03 | Semua MP Minggu Itu: VA-06, IO-02, SQ-03",137538,1,3,Problem Solving Week 1-2 Challenger,Challenger,2,5,2026-09-24 19:16:33,Final Submit,2,Kalkulator Pecahan (a/b dan c/d),1,"program Kalkulator
+kamus
+    a,b,c,d: integer
+    a_pembilang,a_penyebut: integer
+    s_pembilang,s_penyebut: integer
+    m_pembilang,m_penyebut: integer
+    d_pembilang,d_penyebut: integer
+algoritma
+    input(a,b,c,d)
+    a_pembilang=(a*d)+(c*b)
+    a_penyebut=b*d
+    s_pembilang=(a*d)-(c*b)
+    s_penyebut=b*d
+    m_pembilang=a*c
+    m_penyebut=b*d
+    d_pembilang=a*d
+    d_penyebut=b*c
+    output(""addition:"")
+    output(a_pembilang)
+    output(""/"")
+    output(a_penyebut)
+    output(""subtraction:"")
+    output(s_pembilang)
+    output(""/"")
+    output(s_penyebut)
+    output(""multiplication:"")
+    output(m_pembilang)
+    output(""/"")
+    output (m_penyebut)
+    output(""division:"")
+    output(d_pembilang)
+    output(""/"")
+    output(d_penyebut)
+endprogram",True,33.0,Correct with Misconception,Final Submit,"Correct (Mark: 1, Attempt #1)",correct,VA-12,Juan,"Relevan KC (VA, OP, EX, IO, SQ): VA-06, IO-02, SQ-03 | Semua MP Minggu Itu: VA-06, IO-02, SQ-03",0.8070780634880066,1,9,10.9,"input (a,b,c,d)"
+BS1IF-50-REG01_103012600136,103012600136,ROSMALA DEWI,BS1IF-50-REG01,"VA-06, IO-02, SQ-03",16,137538,1,3,Problem Solving Week 1-2 Challenger,Challenger,2,5,2026-09-24 19:16:33,Final Submit,2,Kalkulator Pecahan (a/b dan c/d),1,"program Kalkulator
+kamus
+    a,b,c,d: integer
+    a_pembilang,a_penyebut: integer
+    s_pembilang,s_penyebut: integer
+    m_pembilang,m_penyebut: integer
+    d_pembilang,d_penyebut: integer
+algoritma
+    input(a,b,c,d)
+    a_pembilang=(a*d)+(c*b)
+    a_penyebut=b*d
+    s_pembilang=(a*d)-(c*b)
+    s_penyebut=b*d
+    m_pembilang=a*c
+    m_penyebut=b*d
+    d_pembilang=a*d
+    d_penyebut=b*c
+    output(""addition:"")
+    output(a_pembilang)
+    output(""/"")
+    output(a_penyebut)
+    output(""subtraction:"")
+    output(s_pembilang)
+    output(""/"")
+    output(s_penyebut)
+    output(""multiplication:"")
+    output(m_pembilang)
+    output(""/"")
+    output (m_penyebut)
+    output(""division:"")
+    output(d_pembilang)
+    output(""/"")
+    output(d_penyebut)
+endprogram",True,33.0,Correct with Misconception,Final Submit,"Correct (Mark: 1, Attempt #1)",correct,VA-12,Juan,"Relevan KC (VA, OP, EX, IO, SQ): VA-06, IO-02, SQ-03 | Semua MP Minggu Itu: VA-06, IO-02, SQ-03",137538,1,3,Problem Solving Week 1-2 Challenger,Challenger,3,5,2026-09-24 19:42:25,Final Submit,1,Fungsi,1,"program Fungsi
+kamus
+    x,hasil: real
+algoritma
+    input(x)
+    hasil= ((x*x*x)+3*x)/((x*x*x*x)-(3*x*x)+4)
+    output(hasil)
+endprogram",False,,,,,,-,-,"Semua MP Minggu Itu: VA-06, IO-02, SQ-03",0.8877461552619934,1,9,9.7,"input(a,b,c,d)"
+BS1IF-50-REG01_103012600142,103012600142,DALFA FAUSTA MUNAWAR,BS1IF-50-REG01,"VA-12, VA-14",3,136229,1,1,Problem Solving Week 1-2 Easy,Easy,3,8,2026-09-24 17:43:08,Final Submit,4,Konversi Gram ke Karat,1,"program MengonversiBerat
+kamus
+   gram : real
+   hasil : real
+algoritma
+   input(gram)
+   hasil = gram * 5
+   output(hasil)
+endprogram",False,,,,,,-,-,"Semua MP Minggu Itu: VA-12, VA-14",136229,1,1,Problem Solving Week 1-2 Easy,Easy,4,8,2026-09-24 17:54:37,First Submit First Attempt,16,Persegi Panjang,0,"program PersegiPanjang
+kamus
+   lebar : real
+   panjang : real
+   luas : real
+algoritma
+   input (lebar, panjang)
+   luas = lebar * panjang
+   output (persePanjang)
+endprogram",True,35.0,Wrong with Misconception,First Submit First Attempt,Incorrect (Mark: 0),wrong,"VA-10, VA-14",Juan,"Relevan KC (VA, EX, IO, SQ): VA-12, VA-14 | Semua MP Minggu Itu: VA-12, VA-14",0.9751216769218445,1,7,34.7,hasil = gram * 5
+BS1IF-50-REG01_103012600142,103012600142,DALFA FAUSTA MUNAWAR,BS1IF-50-REG01,"VA-12, VA-14",4,136229,1,1,Problem Solving Week 1-2 Easy,Easy,4,8,2026-09-24 17:54:37,First Submit First Attempt,16,Persegi Panjang,0,"program PersegiPanjang
+kamus
+   lebar : real
+   panjang : real
+   luas : real
+algoritma
+   input (lebar, panjang)
+   luas = lebar * panjang
+   output (persePanjang)
+endprogram",True,35.0,Wrong with Misconception,First Submit First Attempt,Incorrect (Mark: 0),wrong,"VA-10, VA-14",Juan,"Relevan KC (VA, EX, IO, SQ): VA-12, VA-14 | Semua MP Minggu Itu: VA-12, VA-14",136229,1,1,Problem Solving Week 1-2 Easy,Easy,5,8,2026-09-24 17:54:37,Final Submit,16,Persegi Panjang,1,"program PersegiPanjang
+kamus
+   lebar : real
+   panjang : real
+   luas : real
+algoritma
+   input (lebar, panjang)
+   luas = lebar * panjang
+   output (luas)
+endprogram",False,,,,,,-,-,"Relevan KC (VA, EX, IO, SQ): VA-12, VA-14 | Semua MP Minggu Itu: VA-12, VA-14",0.6165823936462402,1,8,30.4,luas = lebar * panjang
+BS1IF-50-REG01_103012600142,103012600142,DALFA FAUSTA MUNAWAR,BS1IF-50-REG01,"VA-12, VA-14",9,137882,1,2,Problem Solving Week 1-2 Challenger,Challenger,1,5,2026-09-24 19:15:28,Final Submit,1,Fungsi,1,"program Fungsi
+kamus
+   x : real
+   fx : real
+algoritma
+   input (x)
+   fx= (x*x*x + 3*x) / (x*x*x*x - 3*x*x + 4)
+   output (fx)
+endprogram",False,,,,,,-,-,"Semua MP Minggu Itu: VA-12, VA-14",137882,1,2,Problem Solving Week 1-2 Challenger,Challenger,2,5,2026-09-24 19:57:43,First Submit First Attempt,2,Kalkulator Pecahan (a/b dan c/d),0,"program MenghitungKalkulator
+kampus
+  a, b, c ,d = integer
+  pembA, penyA, pembB, penyB = integer
+  pembC, penyC, pembD, penyD = integer
+algoritma
+  input (a,b,c,d)
+  pembA = (a * d) + (c * d)
+  penyA = b * d
+  pembB = (a * d) - (c * d)
+  penyB = b * d
+  pembC = a * C
+  penyC = b * d
+  pembD = a * d
+  penyD = b * c
+  output (""addition:"")
+  output (pembA)
+  output (""/"")
+  output (penyA)
+  output (""subtraction:"")
+  output (pembB)
+  output (""/"")
+  output (penyB)
+  output (""multiplication:"")
+  output (pembC)
+  output (""/"")
+  output (penyC)
+  output (""division:"")
+  output (pembD)
+  output (""/"")
+  output (penyD)
+endprogram",True,36.0,Wrong with Misconception,First Submit First Attempt,Incorrect (Mark: 0),wrong,VA-12,Juan,"Relevan KC (VA, OP, EX, IO, SQ): VA-12, VA-14 | Semua MP Minggu Itu: VA-12, VA-14",0.8817471265792847,1,7,87.9,fx= (x*x*x + 3*x) / (x*x*x*x - 3*x*x + 4)
+BS1IF-50-REG01_103012600142,103012600142,DALFA FAUSTA MUNAWAR,BS1IF-50-REG01,"VA-12, VA-14",10,137882,1,2,Problem Solving Week 1-2 Challenger,Challenger,2,5,2026-09-24 19:57:43,First Submit First Attempt,2,Kalkulator Pecahan (a/b dan c/d),0,"program MenghitungKalkulator
+kampus
+  a, b, c ,d = integer
+  pembA, penyA, pembB, penyB = integer
+  pembC, penyC, pembD, penyD = integer
+algoritma
+  input (a,b,c,d)
+  pembA = (a * d) + (c * d)
+  penyA = b * d
+  pembB = (a * d) - (c * d)
+  penyB = b * d
+  pembC = a * C
+  penyC = b * d
+  pembD = a * d
+  penyD = b * c
+  output (""addition:"")
+  output (pembA)
+  output (""/"")
+  output (penyA)
+  output (""subtraction:"")
+  output (pembB)
+  output (""/"")
+  output (penyB)
+  output (""multiplication:"")
+  output (pembC)
+  output (""/"")
+  output (penyC)
+  output (""division:"")
+  output (pembD)
+  output (""/"")
+  output (penyD)
+endprogram",True,36.0,Wrong with Misconception,First Submit First Attempt,Incorrect (Mark: 0),wrong,VA-12,Juan,"Relevan KC (VA, OP, EX, IO, SQ): VA-12, VA-14 | Semua MP Minggu Itu: VA-12, VA-14",137882,1,2,Problem Solving Week 1-2 Challenger,Challenger,3,5,2026-09-24 19:57:43,Final Submit,2,Kalkulator Pecahan (a/b dan c/d),1,"program MenghitungKalkulator
+kamus
+  a, b, c ,d : integer
+  pembA, penyA, pembB, penyB : integer
+  pembC, penyC, pembD, penyD : integer
+algoritma
+  input(a,b,c,d)
+  pembA = (a * d) + (b * c)
+  penyA = b * d
+  pembB = (a * d) - (b * c)
+  penyB = b * d
+  pembC = a * c
+  penyC = b * d
+  pembD = a * d
+  penyD = b * c
+  output(""addition:"")
+  output(pembA)
+  output(""/"")
+  output(penyA)
+  output(""subtraction:"")
+  output(pembB)
+  output(""/"")
+  output(penyB)
+  output(""multiplication:"")
+  output(pembC)
+  output(""/"")
+  output(penyC)
+  output(""division:"")
+  output(pembD)
+  output(""/"")
+  output(penyD)
+endprogram",True,37.0,Correct with Misconception,Final Submit,"Correct (Mark: 1, Attempt #1)",correct,VA-12,Juan,"Relevan KC (VA, OP, EX, IO, SQ): VA-12, VA-14 | Semua MP Minggu Itu: VA-12, VA-14",0.29644593596458435,0,7,9.5,"input (a,b,c,d)"
+BS1IF-50-REG01_103012600142,103012600142,DALFA FAUSTA MUNAWAR,BS1IF-50-REG01,"VA-12, VA-14",11,137882,1,2,Problem Solving Week 1-2 Challenger,Challenger,3,5,2026-09-24 19:57:43,Final Submit,2,Kalkulator Pecahan (a/b dan c/d),1,"program MenghitungKalkulator
+kamus
+  a, b, c ,d : integer
+  pembA, penyA, pembB, penyB : integer
+  pembC, penyC, pembD, penyD : integer
+algoritma
+  input(a,b,c,d)
+  pembA = (a * d) + (b * c)
+  penyA = b * d
+  pembB = (a * d) - (b * c)
+  penyB = b * d
+  pembC = a * c
+  penyC = b * d
+  pembD = a * d
+  penyD = b * c
+  output(""addition:"")
+  output(pembA)
+  output(""/"")
+  output(penyA)
+  output(""subtraction:"")
+  output(pembB)
+  output(""/"")
+  output(penyB)
+  output(""multiplication:"")
+  output(pembC)
+  output(""/"")
+  output(penyC)
+  output(""division:"")
+  output(pembD)
+  output(""/"")
+  output(penyD)
+endprogram",True,37.0,Correct with Misconception,Final Submit,"Correct (Mark: 1, Attempt #1)",correct,VA-12,Juan,"Relevan KC (VA, OP, EX, IO, SQ): VA-12, VA-14 | Semua MP Minggu Itu: VA-12, VA-14",137882,1,2,Problem Solving Week 1-2 Challenger,Challenger,4,5,2026-09-24 20:14:56,Final Submit,15,Persamaan y = (x² + 1/x)²,1,"program Algoritma
+kamus
+   x : real
+   hasil : real
+algoritma
+   input(x)
+   hasil = (x*x + 1/x) * (x*x + 1/x)
+   output(hasil)
+endprogram",False,,,,,,-,-,"Semua MP Minggu Itu: VA-12, VA-14",0.9426679611206055,1,7,9.3,"input(a,b,c,d)"
+BS1IF-50-REG01_103012600179,103012600179,DIAN IBRAHIM WASHIL SIRAJ,BS1IF-50-REG01,"EX-04, OP-05, OP-06, OP-07, SQ-03, VA-14",17,145207,1,3,Problem Solving Week 1-2 Challenger,Challenger,3,4,2026-09-25 11:09:51,Final Submit,1,Fungsi,0,"program fungsi
+kamus
+ x, h :real
+algoritma
+ input(x)
+ h = ((x*x*x) + 3 * x) / ((x*x*x*x) - 3 * (x*x) + 4)
+ output(h)
+endprogram",False,,,,,,-,-,"Semua MP Minggu Itu: EX-04, OP-05, OP-06, OP-07, SQ-03, VA-14",145207,1,3,Problem Solving Week 1-2 Challenger,Challenger,4,4,2026-09-25 11:15:24,First Submit First Attempt,15,Persamaan y = (x² + 1/x)²,0,"program y
+kamus
+ x, y : real
+algoritma
+ input(x)
+ y = ((x*x) + (1/x) * (x*x) + (1/x))
+ output(y)
+endprogram",True,38.0,Wrong with Misconception,First Submit First Attempt,Incorrect (Mark: 0),wrong,OP-07,Tim Reviewer,"Relevan KC (VA, OP, EX, IO, SQ): VA-14, OP-05, OP-06, OP-07, EX-04, SQ-03 | Semua MP Minggu Itu: EX-04, OP-05, OP-06, OP-07, SQ-03, VA-14",0.5234931707382202,1,6,88.3,h = ((x*x*x) + 3 * x) / ((x*x*x*x) - 3 * (x*x) + 4)
+BS1IF-50-REG01_103012600179,103012600179,DIAN IBRAHIM WASHIL SIRAJ,BS1IF-50-REG01,"EX-04, OP-05, OP-06, OP-07, SQ-03, VA-14",18,145207,1,3,Problem Solving Week 1-2 Challenger,Challenger,4,4,2026-09-25 11:15:24,First Submit First Attempt,15,Persamaan y = (x² + 1/x)²,0,"program y
+kamus
+ x, y : real
+algoritma
+ input(x)
+ y = ((x*x) + (1/x) * (x*x) + (1/x))
+ output(y)
+endprogram",True,38.0,Wrong with Misconception,First Submit First Attempt,Incorrect (Mark: 0),wrong,OP-07,Tim Reviewer,"Relevan KC (VA, OP, EX, IO, SQ): VA-14, OP-05, OP-06, OP-07, EX-04, SQ-03 | Semua MP Minggu Itu: EX-04, OP-05, OP-06, OP-07, SQ-03, VA-14",156267,2,4,Problem Solving Week 1-2 Challenger,Challenger,1,4,2026-09-25 22:56:46,Final Submit,15,Persamaan y = (x² + 1/x)²,0,"program y
+kamus
+    y, x : real
+algoritma
+    input(x)
+    y = ((x*x) + 1 / x) * (x*x) + 1 / x))
+    output(y)
+endprogram",False,,,,,,-,-,"Relevan KC (VA, OP, EX, IO, SQ): VA-14, OP-05, OP-06, OP-07, EX-04, SQ-03 | Semua MP Minggu Itu: EX-04, OP-05, OP-06, OP-07, SQ-03, VA-14",0.41213560104370117,0,6,82.0,y = ((x*x) + (1/x) * (x*x) + (1/x))
+BS1IF-50-REG01_103012630016,103012630016,SAKTI ARYA ARTA,BS1IF-50-REG01,"EX-04, IO-02, IO-05, OP-05, OP-06, VA-12, VA-01",17,161189,1,3,Problem Solving Week 1-2 Challenger,Challenger,3,5,2026-09-26 13:43:03,Final Submit,7,Membaca dan Mencetak Karakter,1,"program karakter
+kamus
+    a, b : char
+algoritma
+    input(a)
+    b = a
+    output(b)
+endprogram",False,,,,,,-,-,"Semua MP Minggu Itu: EX-04, IO-02, IO-05, OP-05, OP-06, VA-12, VA-01",161189,1,3,Problem Solving Week 1-2 Challenger,Challenger,4,5,2026-09-26 20:17:09,First Submit First Attempt,2,Kalkulator Pecahan (a/b dan c/d),0,"program kalkulator
+kamus
+    a, b, c, d = integer
+algoritma
+    a/b + c/d = (a * d) + (b * c) / b * d
+    a/b * c/d = a * c / b * c
+    a/b : c/d = a * d / b * c
+    output(a/b + c/d)
+    output(a/b * c/d)
+    output(a/b : c/d)
+endprogram",True,26.0,Wrong with Misconception,First Submit First Attempt,Incorrect (Mark: 0),wrong,VA-06,Juan,"Relevan KC (VA, OP, EX, IO, SQ): VA-12, VA-01, OP-05, OP-06, EX-04, IO-02, IO-05 | Semua MP Minggu Itu: EX-04, IO-02, IO-05, OP-05, OP-06, VA-12, VA-01",0.803210973739624,1,3,31.0,"a, b : char"
+BS1IF-50-REG01_103012630016,103012630016,SAKTI ARYA ARTA,BS1IF-50-REG01,"EX-04, IO-02, IO-05, OP-05, OP-06, VA-12, VA-01",18,161189,1,3,Problem Solving Week 1-2 Challenger,Challenger,4,5,2026-09-26 20:17:09,First Submit First Attempt,2,Kalkulator Pecahan (a/b dan c/d),0,"program kalkulator
+kamus
+    a, b, c, d = integer
+algoritma
+    a/b + c/d = (a * d) + (b * c) / b * d
+    a/b * c/d = a * c / b * c
+    a/b : c/d = a * d / b * c
+    output(a/b + c/d)
+    output(a/b * c/d)
+    output(a/b : c/d)
+endprogram",True,26.0,Wrong with Misconception,First Submit First Attempt,Incorrect (Mark: 0),wrong,VA-06,Juan,"Relevan KC (VA, OP, EX, IO, SQ): VA-12, VA-01, OP-05, OP-06, EX-04, IO-02, IO-05 | Semua MP Minggu Itu: EX-04, IO-02, IO-05, OP-05, OP-06, VA-12, VA-01",161189,1,3,Problem Solving Week 1-2 Challenger,Challenger,5,5,2026-09-26 20:17:09,Final Submit,2,Kalkulator Pecahan (a/b dan c/d),0,"program kalkulator
+kamus
+    a, b, c, d, x, y = integer
+algoritma
+    input(a,b,c,d)
+    x = (a * d) + (b * c)
+    y = b * d
+    output(""addition:"")
+    output(x)
+    output(""/"")
+    output(y)
+    x = (a * d) - (b * c)
+    y = b * d
+    output(""subtraction:"")
+    output(x)
+    output(""/"")
+    output(y)
+    x = a * c
+    y = b * d
+    output(""multiplication"")
+    output(x)
+    output(""/"")
+    output(y)
+    x = a * d
+    y = b * c
+    output(""division"")
+    output(x)
+    output(""/"")
+    output(y)
+endprogram",False,,,,,,-,-,"Relevan KC (VA, OP, EX, IO, SQ): VA-12, VA-01, OP-05, OP-06, EX-04, IO-02, IO-05 | Semua MP Minggu Itu: EX-04, IO-02, IO-05, OP-05, OP-06, VA-12, VA-01",0.3546094000339508,0,8,57.5,output(a/b + c/d)
+BS1IF-50-REG01_103012630016,103012630016,SAKTI ARYA ARTA,BS1IF-50-REG01,"EX-04, IO-02, IO-05, OP-05, OP-06, VA-12, VA-01",22,167373,1,4,Problem Solving Week 1-2 Ultimate,Ultimate,3,9,2026-09-26 21:20:24,Final Submit,12,Menyisipkan Satu Digit di Tengah Bilangan Empat Digit,1,"program penyisip
+kamus
+    nyisip, digit1, digit4, digitlengkap, hasilakhir : integer
+algoritma
+    input(digitlengkap, nyisip)
+    digit1 <- digitlengkap div 100
+    digit4 <- digitlengkap mod 100
+    hasilakhir <- digit1 * 1000 + nyisip * 100 + digit4
+    output(hasilakhir)
+endprogram",False,,,,,,-,-,"Semua MP Minggu Itu: EX-04, IO-02, IO-05, OP-05, OP-06, VA-12, VA-01",167373,1,4,Problem Solving Week 1-2 Ultimate,Ultimate,4,9,2026-09-26 22:22:04,First Submit First Attempt,9,Menentukan Apakah Bilangan Kedua Merupakan Faktor Bilangan Pertama,0,"program faktor
+kamus
+    x, y, hasil : integer
+algoritma
+    input(x,y)
+    if (x mod y = 0) then
+        hasil <- 1
+    else
+        hasil <- 0
+    output(hasil)
+endprogram",True,27.0,Wrong with Misconception,First Submit First Attempt,Incorrect (Mark: 0),wrong,OP-01,Juan,"Relevan KC (VA, OP, EX, IO, SQ): VA-12, VA-01, OP-05, OP-06, EX-04, IO-02, IO-05 | Semua MP Minggu Itu: EX-04, IO-02, IO-05, OP-05, OP-06, VA-12, VA-01",0.845945417881012,1,8,41.9,hasilakhir <- digit1 * 1000 + nyisip * 100 + digit4
+BS1IF-50-REG01_103012630016,103012630016,SAKTI ARYA ARTA,BS1IF-50-REG01,"EX-04, IO-02, IO-05, OP-05, OP-06, VA-12, VA-01",23,167373,1,4,Problem Solving Week 1-2 Ultimate,Ultimate,4,9,2026-09-26 22:22:04,First Submit First Attempt,9,Menentukan Apakah Bilangan Kedua Merupakan Faktor Bilangan Pertama,0,"program faktor
+kamus
+    x, y, hasil : integer
+algoritma
+    input(x,y)
+    if (x mod y = 0) then
+        hasil <- 1
+    else
+        hasil <- 0
+    output(hasil)
+endprogram",True,27.0,Wrong with Misconception,First Submit First Attempt,Incorrect (Mark: 0),wrong,OP-01,Juan,"Relevan KC (VA, OP, EX, IO, SQ): VA-12, VA-01, OP-05, OP-06, EX-04, IO-02, IO-05 | Semua MP Minggu Itu: EX-04, IO-02, IO-05, OP-05, OP-06, VA-12, VA-01",167373,1,4,Problem Solving Week 1-2 Ultimate,Ultimate,5,9,2026-09-26 22:22:04,Final Submit,9,Menentukan Apakah Bilangan Kedua Merupakan Faktor Bilangan Pertama,0,"program faktor
+kamus
+    x, y, hasil, sisa : integer
+algoritma
+    input(x, y)
+    sisa <- x - (x div y) * y
+    if (sisa = 0) then
+        hasil <- 1
+    else
+        hasil <- 0
+    endif
+    output(hasil)
+endprogram",True,29.0,Wrong with Misconception,Final Submit,"Incorrect (Mark: 0, Attempt #1)",wrong,OP-01,Juan,"Relevan KC (VA, OP, EX, IO, SQ): VA-12, VA-01, OP-05, OP-06, EX-04, IO-02, IO-05 | Semua MP Minggu Itu: EX-04, IO-02, IO-05, OP-05, OP-06, VA-12, VA-01",0.3487423360347748,0,5,23.5,"input(x,y)"
+BS1IF-50-REG01_103012630016,103012630016,SAKTI ARYA ARTA,BS1IF-50-REG01,"EX-04, IO-02, IO-05, OP-05, OP-06, VA-12, VA-01",24,167373,1,4,Problem Solving Week 1-2 Ultimate,Ultimate,5,9,2026-09-26 22:22:04,Final Submit,9,Menentukan Apakah Bilangan Kedua Merupakan Faktor Bilangan Pertama,0,"program faktor
+kamus
+    x, y, hasil, sisa : integer
+algoritma
+    input(x, y)
+    sisa <- x - (x div y) * y
+    if (sisa = 0) then
+        hasil <- 1
+    else
+        hasil <- 0
+    endif
+    output(hasil)
+endprogram",True,29.0,Wrong with Misconception,Final Submit,"Incorrect (Mark: 0, Attempt #1)",wrong,OP-01,Juan,"Relevan KC (VA, OP, EX, IO, SQ): VA-12, VA-01, OP-05, OP-06, EX-04, IO-02, IO-05 | Semua MP Minggu Itu: EX-04, IO-02, IO-05, OP-05, OP-06, VA-12, VA-01",167373,1,4,Problem Solving Week 1-2 Ultimate,Ultimate,6,9,2026-09-26 23:25:02,Final Submit,10,Menentukan Bilangan Negatif Tanpa Percabangan,1,"program bilangan_negatif
+kamus
+    nilai, hasil, nilaiakhir : integer
+algoritma
+    input(nilai)
+    hasil <- nilai >> 31
+    nilaiakhir <- hasil & 1
+    output(nilaiakhir)
+endprogram",False,,,,,,-,-,"Semua MP Minggu Itu: EX-04, IO-02, IO-05, OP-05, OP-06, VA-12, VA-01",0.12094315886497498,0,6,27.7,sisa <- x - (x div y) * y

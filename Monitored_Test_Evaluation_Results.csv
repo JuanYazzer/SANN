@@ -1,0 +1,568 @@
+﻿No,Nama,Kelas,Minggu_Ke_Berapa,Nama_Soal,Sumber_Code,Kategori_Pantauan,Status_Asli_Code,Ground_Truth_Hasil,Prediksi_SANN_Final,Prediksi_SANN_Pure_NN,Match_Ground_Truth,Match_Pure_NN_Ground_Truth,Prob_Correct_%,Prob_Incorrect_%,Syntax_Error,Top_Attention_Line,Top_Attention_Weight_%,Top_Attention_Code,Code_Yang_Disimpan
+1,DANENDRA IBRAHIM SUSILO (103012500167),BS1IF-50-REG01,Week_01-02 — Problem Solving Week 1-2 Challenger,Soal 11 (Challenger #4: Persamaan y = (x² + 1/x)²),Final Submit,Wrong with Misconception,"Incorrect (Mark: 0, Attempt #1)",wrong,wrong,correct,MATCH,MISMATCH,91.68,8.32,Line 1: SyntaxError: Program name required,3,53.7,"x, y : real","Program Persamaan
+kamus
+    x, y : real
+algoritma
+    input(x)
+    y <- (x * x + 1 / x) * (x * x + 1 / x)
+    output(y)
+endprogram"
+2,FAHRI PUTRA YONKI (103012500168),BS1IF-50-REG01,Week_01-02 — Problem Solving Week 1-2 Easy,Soal 2 (Easy #2: Konversi Suhu Celsius ke Fahrenheit),First Submit First Attempt,Wrong with Misconception,Incorrect (Mark: 0),wrong,wrong,correct,MATCH,MISMATCH,55.63,44.37,Line 7: SyntaxError: Expected 'endprogram' got EOF,7,50.1,fahrenheit = (9.0/5.0)*celcius+32.0,"program konversi
+kamus
+   celcius : integer
+   fahrenheit : real
+algoritma
+   input(celcius)
+   fahrenheit = (9.0/5.0)*celcius+32.0"
+3,JULIAN FERDIYANTO (103012500250),BS1IF-50-REG01,Week_01-02 — Problem Solving Week 1-2 Easy,Soal 4 (Easy #4: Pembagian Burger per Anggota Keluarga (div)),First Submit First Attempt,Wrong with Misconception,Incorrect (Mark: 0),wrong,wrong,wrong,MATCH,MATCH,0.28,99.72,None,6,99.6,total = y % x,"program berat
+kamus
+    y, x: real
+algoritma
+    input(berat)
+    total = y % x
+    output(total)
+endprogram"
+4,JULIAN FERDIYANTO (103012500250),BS1IF-50-REG01,Week_01-02 — Problem Solving Week 1-2 Challenger,Soal 9 (Challenger #2: Kalkulator Pecahan (a/b dan c/d)),Final Submit,Correct with Misconception,"Correct (Mark: 1, Attempt #1)",correct,correct,correct,MATCH,MATCH,50.78,49.22,None,13,18.5,num_add <- (a * d) + (b * c),"program kalkulator_pecahan
+kamus
+  a, b, c, d: integer
+  num_add, den_add: integer
+  num_sub, den_sub: integer
+  num_mul, den_mul: integer
+  num_div, den_div: integer
+
+algoritma
+  input(a, b, c, d)
+
+  // Operasi Penjumlahan (a/b + c/d)
+  num_add <- (a * d) + (b * c)
+  den_add <- (b * d)
+  output(""addition:"")
+  output(num_add)
+  output(""/"")
+  output(den_add)
+
+  // Operasi Pengurangan (a/b - c/d)
+  num_sub <- (a * d) - (b * c)
+  den_sub <- (b * d)
+  output(""subtraction:"")
+  output(num_sub)
+  output(""/"")
+  output(den_sub)
+
+  // Operasi Perkalian (a/b * c/d)
+  num_mul <- (a * c)
+  den_mul <- (b * d)
+  output(""multiplication:"")
+  output(num_mul)
+  output(""/"")
+  output(den_mul)
+
+  // Operasi Pembagian (a/b / c/d)
+  num_div <- (a * d)
+  den_div <- (b * c)
+  output(""division:"")
+  output(num_div)
+  output(""/"")
+  output(den_div)
+endprogram"
+5,JULIAN FERDIYANTO (103012500250),BS1IF-50-REG01,Week_01-02 — Problem Solving Week 1-2 Ultimate,Soal 15 (Ultimate #4: Menentukan Apakah Bilangan Kedua Merupakan Faktor Bilangan Pertama),First Submit First Attempt,Wrong with Misconception,Incorrect (Mark: 0),wrong,wrong,wrong,MATCH,MATCH,0.03,99.97,Line 6: SyntaxError: Expected 'then',6,99.4,if x mod y = 0 then,"program digit
+kamus
+    x, y, hasil: integer
+algoritma
+    input(x, y)
+    if x mod y = 0 then
+        hasil = 1
+    else
+        hasil = 0
+    endif
+    output(hasil)
+endprogram"
+6,JULIAN FERDIYANTO (103012500250),BS1IF-50-REG01,Week_01-02 — Problem Solving Week 1-2 Ultimate,Soal 15 (Ultimate #4: Menentukan Apakah Bilangan Kedua Merupakan Faktor Bilangan Pertama),Final Submit,Wrong with Misconception,"Incorrect (Mark: 0, Attempt #1)",wrong,wrong,wrong,MATCH,MATCH,0.03,99.97,Line 6: SyntaxError: Expected ')',6,99.0,if (x mod y = 0) then,"program faktor
+kamus
+    x, y: integer
+algoritma
+    input(x, y)
+    if (x mod y = 0) then
+        output(1)
+    else
+        output(0)
+    endif
+endprogram"
+7,JULIAN FERDIYANTO (103012500250),BS1IF-50-REG01,Week_01-02 — Problem Solving Week 1-2 Ultimate,Soal 19 (Ultimate #8: Pertukaran Isi Tiga Variabel),First Submit First Attempt,Wrong with Misconception,Incorrect (Mark: 0),wrong,correct,correct,MISMATCH,MISMATCH,71.39,28.61,None,3,25.0,"x, y, z, temp: integer","program tukar
+kamus
+    x, y, z, temp: integer
+algoritma
+    input(x, y, z)
+    temp = y
+    y = z
+    x = z
+    z = temp
+    output(x, y, z)
+endprogram"
+8,RIFKI NAJWAN SETIAWAN (103012600002),BS1IF-50-REG01,Week_01-02 — Problem Solving Week 1-2 Easy,Soal 2 (Easy #2: Konversi Suhu Celsius ke Fahrenheit),First Submit First Attempt,Wrong with Misconception,Incorrect (Mark: 0),wrong,wrong,correct,MATCH,MISMATCH,70.28,29.72,Line 1: SyntaxError: Expected 'endprogram' got fahrenheit,6,90.9,hasil = (9.0 / 5.0) * x + 32.0,"program suhu ke fahrenheit
+kamus
+    x, hasil : real
+algoritma
+    input(x)
+    hasil = (9.0 / 5.0) * x + 32.0
+    output(hasil)
+endprogram"
+9,RIFKI NAJWAN SETIAWAN (103012600002),BS1IF-50-REG01,Week_01-02 — Problem Solving Week 1-2 Easy,Soal 3 (Easy #3: Konversi Suhu Celsius ke Kelvin),First Submit First Attempt,Wrong with Misconception,Incorrect (Mark: 0),wrong,correct,correct,MISMATCH,MISMATCH,65.88,34.12,None,6,92.0,hasil = x * 273,"program suhu
+kamus
+    x : real
+algoritma
+    input(x)
+    hasil = x * 273
+    output(hasil)
+endprogram"
+10,RIFKI NAJWAN SETIAWAN (103012600002),BS1IF-50-REG01,Week_01-02 — Problem Solving Week 1-2 Easy,Soal 4 (Easy #4: Pembagian Burger per Anggota Keluarga (div)),First Submit First Attempt,Wrong with Misconception,Incorrect (Mark: 0),wrong,wrong,wrong,MATCH,MATCH,1.29,98.71,Line 6: SyntaxError: Expected 'endprogram' got EOF,6,98.5,jumlah=(y/x),"program anggota
+kamus
+    y, x, jumlah : integer
+algoritma
+    input(y, x)
+    jumlah=(y/x)"
+11,RIFKI NAJWAN SETIAWAN (103012600002),BS1IF-50-REG01,Week_01-02 — Problem Solving Week 1-2 Easy,Soal 6 (Easy #6: Persegi Panjang),First Submit First Attempt,Wrong with Misconception,Incorrect (Mark: 0),wrong,wrong,wrong,MATCH,MATCH,42.05,57.95,None,3,68.1,"x, y, hasil : real","program persegi panjang
+kamus
+    x, y, hasil : real
+algoritma
+    input(x,y)
+    hasil= x * y
+    output(hasil)
+endprogram"
+12,RIFKI NAJWAN SETIAWAN (103012600002),BS1IF-50-REG01,Week_01-02 — Problem Solving Week 1-2 Challenger,Soal 9 (Challenger #2: Kalkulator Pecahan (a/b dan c/d)),First Submit First Attempt,Wrong with Misconception,Incorrect (Mark: 0),wrong,wrong,wrong,MATCH,MATCH,41.23,58.77,"Line 8: SyntaxError: Expected ',' or ')'",6,14.7,hasil1 = a * b + c * d,"program kalkulator
+kamus
+    a,b,c,d,hasil1,tampilan1,hasil2,tampilan2,hasil3,tampilan3,hasil4,tampilan4 : integer
+algoritma
+    input(a,b,c,d)
+    hasil1 = a * b + c * d
+    tampilan1 = b * d
+    output(addition:)
+    output(hasil1)
+    output(""/"")
+    output(tampilan1)
+
+    hasil2 = a * b - c * d
+    tampilan2 = b * d
+    output(substraction:)
+    output(hasil2)
+    output(""/"")
+    output(tampilan2)
+
+    hasil3 = a * c
+    tampilan3 = b * d
+    output(multiplication:)
+    output(hasil3)
+    output(""/"")
+    output(tampilan3)
+
+    hasil4 = a * d
+    tampilan4 = b * c
+    output(substraction:)
+    output(hasil4)
+    output(""/"")
+    output(tampilan4)
+endprogram"
+13,RIFKI NAJWAN SETIAWAN (103012600002),BS1IF-50-REG01,Week_01-02 — Problem Solving Week 1-2 Challenger,Soal 9 (Challenger #2: Kalkulator Pecahan (a/b dan c/d)),Final Submit,Correct with Misconception,"Correct (Mark: 1, Attempt #1)",correct,wrong,wrong,MISMATCH,MISMATCH,41.17,58.83,None,6,36.7,hasil1 = a * d + c * b,"program kalkulator
+kamus
+    a,b,c,d,hasil1,tampilan1,hasil2,tampilan2,hasil3,tampilan3,hasil4,tampilan4 : integer
+algoritma
+    input(a,b,c,d)
+    hasil1 = a * d + c * b
+    tampilan1 = b * d
+    output(""addition:"")
+    output(hasil1)
+    output(""/"")
+    output(tampilan1)
+
+    hasil2 = a * d - c * b
+    tampilan2 = b * d
+    output(""subtraction:"")
+    output(hasil2)
+    output(""/"")
+    output(tampilan2)
+
+    hasil3 = a * c
+    tampilan3 = b * d
+    output(""multiplication:"")
+    output(hasil3)
+    output(""/"")
+    output(tampilan3)
+
+    hasil4 = a * d
+    tampilan4 = b * c
+    output(""division:"")
+    output(hasil4)
+    output(""/"")
+    output(tampilan4)
+endprogram"
+14,RIFKI NAJWAN SETIAWAN (103012600002),BS1IF-50-REG01,Week_01-02 — Problem Solving Week 1-2 Ultimate,Soal 12 (Ultimate #1: Denominasi Uang Kembalian),First Submit First Attempt,Wrong with Misconception,Incorrect (Mark: 0),wrong,correct,correct,MISMATCH,MISMATCH,69.17,30.83,None,5,42.5,hasil1 = x div 10000,"program kembalian
+kamus
+    x,hasil1,hasil2,hasil3 : integer
+algoritma
+    hasil1 = x div 10000
+    hasil2 = hasil1 mod 5000
+    hasil3 = hasil2 mod 1000
+    output(hasil1)
+    output(hasil2)
+    output(hasil3)
+endprogram"
+15,QURRATU ' AIN (103012600012),BS1IF-50-REG01,Week_01-02 — Problem Solving Week 1-2 Easy,Soal 7 (Easy #7: Sisa Pembagian Kue (mod)),First Submit First Attempt,Wrong with Misconception,Incorrect (Mark: 0),wrong,wrong,wrong,MATCH,MATCH,31.43,68.57,None,6,71.2,hasil=y mod x,"program kukis
+kamus
+  y,x,hasil : integer
+algoritma
+  input(y,x)
+  hasil=y mod x
+endprogram"
+16,QURRATU ' AIN (103012600012),BS1IF-50-REG01,Week_01-02 — Problem Solving Week 1-2 Challenger,Soal 9 (Challenger #2: Kalkulator Pecahan (a/b dan c/d)),First Submit First Attempt,Wrong with Misconception,Incorrect (Mark: 0),wrong,wrong,wrong,MATCH,MATCH,45.97,54.03,Line 1: SyntaxError: Program name required,7,19.3,m1=(a*o)+(o*i),"pemograman perhitungan
+kamus
+  a,i,o,u : integer
+  m1,n2,m2,n2,m3,n3,m4,n4 : integer
+algoritma
+ input(a,i,o,u)
+ m1=(a*o)+(o*i)
+ n1=i*u
+ m2=(a*o)-(o*i)
+ n2=i*u
+ m3=a*o
+ n3=i*o
+ m4=a*u
+ n4=i*u
+ output(""addition: "")
+ output(m1)
+ output(""/"")
+ output(n1)
+ output(""subtraction: "")
+ output(m2)
+ output(""/"")
+ output(n2)
+ output(""multiplication: "")
+ output(m3)
+ output(""/"")
+ output(n3)
+ output(""division: "")
+ output(m4)
+ output(""/"")
+ output(n4)
+endprogram"
+17,QURRATU ' AIN (103012600012),BS1IF-50-REG01,Week_01-02 — Problem Solving Week 1-2 Challenger,Soal 9 (Challenger #2: Kalkulator Pecahan (a/b dan c/d)),Final Submit,Correct with Misconception,"Correct (Mark: 1, Attempt #1)",correct,wrong,wrong,MISMATCH,MISMATCH,45.98,54.02,None,7,18.8,m1=(a*u)+(o*i),"program perhitungan
+kamus
+  a,i,o,u : integer
+  m1,n1,m2,n2,m3,n3,m4,n4 : integer
+algoritma
+  input(a,i,o,u)
+  m1=(a*u)+(o*i)
+  n1=i*u
+  m2=(a*u)-(o*i)
+  n2=i*u
+  m3=a*o
+  n3=i*u
+  m4=a*u
+  n4=i*o
+  output(""addition:"")
+  output(m1)
+  output(""/"")
+  output(n1)
+  output(""subtraction:"")
+  output(m2)
+  output(""/"")
+  output(n2)
+  output(""multiplication:"")
+  output(m3)
+  output(""/"")
+  output(n3)
+  output(""division:"")
+  output(m4)
+  output(""/"")
+  output(n4)
+endprogram"
+18,QURRATU ' AIN (103012600012),BS1IF-50-REG01,Week_01-02 — Problem Solving Week 1-2 Challenger,Soal 11 (Challenger #4: Persamaan y = (x² + 1/x)²),First Submit First Attempt,Wrong with Misconception,Incorrect (Mark: 0),wrong,wrong,wrong,MATCH,MATCH,14.94,85.06,Line 6: SyntaxError: Expected 'endprogram' got EOF,6,98.0,y=((x*x)+1)/X*((x*x)+1)/X,"program number
+kamus
+  x, y : real
+algoritma
+  input(x)
+  y=((x*x)+1)/X*((x*x)+1)/X"
+19,ADITYA ZUHRI (103012600021),BS1IF-50-REG01,Week_01-02 — Problem Solving Week 1-2 Challenger,Soal 9 (Challenger #2: Kalkulator Pecahan (a/b dan c/d)),First Submit First Attempt,Wrong with Misconception,Incorrect (Mark: 0),wrong,wrong,wrong,MATCH,MATCH,19.7,80.3,Line 29: SyntaxError: Expected 'endprogram' got EOF,6,20.4,xa <- ( a * b ) + ( c * d ),"program kalkulator
+kamus
+  a, b , c, d, xa, ya, xs, ys, xm, ym, xd, yd : integer
+algoritma
+  input(a, b, c, d)
+  xa <- ( a * b ) + ( c * d )
+  ya <- ( b * d )
+  xs <- ( a * b ) - ( c * d )
+  ys <- ( b * d )
+  xm <- ( a * c )
+  ym <- ( b * d )
+  xd <- ( a * d )
+  yd <- ( b * c )
+  output(""addition :"")
+  output(xa)
+  output(""/"")
+  output(ya)
+  output(""subtraction :"")
+  output(xs)
+  output(""/"")
+  output(ys)
+  output(""multiplication :"")
+  output(xm)
+  output(""/"")
+  output(ym)
+  output(""division :"")
+  output(xd)
+  output(""/"")
+  output(yd)"
+20,ADITYA ZUHRI (103012600021),BS1IF-50-REG01,Week_01-02 — Problem Solving Week 1-2 Challenger,Soal 9 (Challenger #2: Kalkulator Pecahan (a/b dan c/d)),Final Submit,Correct with Misconception,"Correct (Mark: 1, Attempt #1)",correct,wrong,wrong,MISMATCH,MISMATCH,19.7,80.3,None,6,25.1,xa <- ( a * d ) + ( b * c ),"program kalkulator
+kamus
+  a, b , c, d, xa, ya, xs, ys, xm, ym, xd, yd : integer
+algoritma
+  input(a, b, c, d)
+  xa <- ( a * d ) + ( b * c )
+  ya <- ( b * d )
+  xs <- ( a * d ) - ( b * c )
+  ys <- ( b * d )
+  xm <- ( a * c )
+  ym <- ( b * d )
+  xd <- ( a * d )
+  yd <- ( b * c )
+
+  output(""addition:"")
+  output(xa)
+  output(""/"")
+  output(ya)
+
+  output(""subtraction:"")
+  output(xs)
+  output(""/"")
+  output(ys)
+
+  output(""multiplication:"")
+  output(xm)
+  output(""/"")
+  output(ym)
+
+  output(""division:"")
+  output(xd)
+  output(""/"")
+  output(yd)
+endprogram"
+21,ADITYA ZUHRI (103012600021),BS1IF-50-REG01,Week_01-02 — Problem Solving Week 1-2 Challenger,Soal 11 (Challenger #4: Persamaan y = (x² + 1/x)²),Final Submit,Correct with Misconception,"Correct (Mark: 1, Attempt #1)",correct,correct,correct,MATCH,MATCH,57.51,42.49,None,3,44.8,"x, y, y1 : real","program menghitung
+kamus
+  x, y, y1 : real
+algoritma
+  input(x)
+  y <- ( x * x ) + (1 / x)
+  y1 <- y * y
+  output(y1)
+endprogram"
+22,ADITYA ZUHRI (103012600021),BS1IF-50-REG01,Week_01-02 — Problem Solving Week 1-2 Ultimate,Soal 12 (Ultimate #1: Denominasi Uang Kembalian),Final Submit,Correct with Misconception,"Correct (Mark: 1, Attempt #2)",correct,correct,correct,MATCH,MATCH,89.64,10.36,None,8,23.7,a2 <- sisa1 div 5000,"program kembalian
+kamus
+    x, a1, a2, a3, sisa1, sisa2 : integer
+algoritma
+    input(x)
+    a1 <- x div 10000
+    sisa1 <- x mod 10000
+    a2 <- sisa1 div 5000
+    sisa2 <- sisa1 mod 5000
+    a3 <- sisa2 div 1000
+    output(a1)
+    output(a2)
+    output(a3)
+endprogram"
+23,ADITYA ZUHRI (103012600021),BS1IF-50-REG01,Week_01-02 — Problem Solving Week 1-2 Ultimate,Soal 12 (Ultimate #1: Denominasi Uang Kembalian),First Submit First Attempt,Wrong with Misconception,Incorrect (Mark: 0),wrong,correct,correct,MISMATCH,MISMATCH,73.99,26.01,None,9,25.1,sisa1 <- b mod 5000,"program lembar_uang
+kamus
+  x, a, b, c, sisa, sisa1 : integer
+algoritma
+  input(x)
+  a <- x div 10000
+  sisa <- a mod 10000
+  b <- sisa div 5000
+  sisa1 <- b mod 5000
+  c <- sisa1 div 1000
+
+  output(a)
+  output(b)
+  output(c)
+endprogram"
+24,ADITYA ZUHRI (103012600021),BS1IF-50-REG01,Week_01-02 — Problem Solving Week 1-2 Ultimate,Soal 13 (Ultimate #2: Konversi Detik Maraton ke Jam-Menit-Detik),Final Submit,Correct with Misconception,"Correct (Mark: 1, Attempt #2)",correct,correct,correct,MATCH,MATCH,87.88,12.12,None,8,30.3,a2 <- sisa1 div 60,"program konversi_waktu
+kamus
+    x, a1, a2, a3, sisa1, sisa2 : integer
+algoritma
+    input(x)
+    a1 <- x div 3600
+    sisa1 <- x mod 3600
+    a2 <- sisa1 div 60
+    sisa2 <- sisa1 mod 60
+    a3 <- sisa2
+    output(a1)
+    output(a2)
+    output(a3)
+endprogram"
+25,ADITYA ZUHRI (103012600021),BS1IF-50-REG01,Week_01-02 — Problem Solving Week 1-2 Ultimate,Soal 13 (Ultimate #2: Konversi Detik Maraton ke Jam-Menit-Detik),First Submit First Attempt,Wrong with Misconception,Incorrect (Mark: 0),wrong,correct,correct,MISMATCH,MISMATCH,58.13,41.87,None,3,20.4,"n, j, m, d, sisaj, sisam : integer","program waktu
+kamus
+  n, j, m, d, sisaj, sisam : integer
+algoritma
+  input(n)
+  j <- n div 3600
+  sisaj <- n mod 3600
+  m <- sisaj div 60
+  sisam <- m mod 60
+  d <- sisam div 60
+  output(j)
+  output(m)
+  output(d)
+endprogram"
+26,ADITYA ZUHRI (103012600021),BS1IF-50-REG01,Week_01-02 — Problem Solving Week 1-2 Ultimate,Soal 19 (Ultimate #8: Pertukaran Isi Tiga Variabel),Final Submit,Correct with Misconception,"Correct (Mark: 1, Attempt #2)",correct,correct,correct,MATCH,MATCH,56.37,43.63,None,4,25.9,"a, b, c : integer","program tigavariabel
+kamus
+    x, y, z : integer
+    a, b, c : integer
+algoritma
+    input(x, y, z)
+    a <- z
+    b <- x
+    c <- y
+    output(a)
+    output(b)
+    output(c)
+endprogram"
+27,FADHLAN HANIFAN TAQWIM (103012600041),BS1IF-50-REG01,Week_01-02 — Problem Solving Week 1-2 Easy,Soal 7 (Easy #7: Sisa Pembagian Kue (mod)),Final Submit,Wrong with Misconception,"Incorrect (Mark: 0, Attempt #1)",wrong,wrong,wrong,MATCH,MATCH,0.3,99.7,Line 1: SyntaxError: Program name required,6,99.7,sisa = y % x,"kamus
+    y,x : real
+    sisa : real
+algoritma
+    input(x, y)
+    sisa = y % x
+    output(sisa)
+endprogram"
+28,KEYSHA HANADYA NASHIRA (103012600049),BS1IF-50-REG01,Week_01-02 — Problem Solving Week 1-2 Easy,Soal 2 (Easy #2: Konversi Suhu Celsius ke Fahrenheit),First Submit First Attempt,Wrong with Misconception,Incorrect (Mark: 0),wrong,wrong,wrong,MATCH,MATCH,30.93,69.07,Line 2: SyntaxError: Unexpected character '&',3,66.9,fahrenheit = (9.0 / 5.0) * celcius + 32.0,"algoritma
+    input(&celcius)
+    fahrenheit = (9.0 / 5.0) * celcius + 32.0
+    output(fahrenheit)
+endprogram"
+29,KEYSHA HANADYA NASHIRA (103012600049),BS1IF-50-REG01,Week_01-02 — Problem Solving Week 1-2 Easy,Soal 3 (Easy #3: Konversi Suhu Celsius ke Kelvin),First Submit First Attempt,Wrong with Misconception,Incorrect (Mark: 0),wrong,wrong,correct,MATCH,MISMATCH,72.93,27.07,Line 1: SyntaxError: Program name required,3,98.8,kelvin = celcius + 273,"algoritma
+    input(celcius)
+    kelvin = celcius + 273
+    output(kelvin)
+endprogram"
+30,KEYSHA HANADYA NASHIRA (103012600049),BS1IF-50-REG01,Week_01-02 — Problem Solving Week 1-2 Easy,Soal 4 (Easy #4: Pembagian Burger per Anggota Keluarga (div)),First Submit First Attempt,Wrong with Misconception,Incorrect (Mark: 0),wrong,wrong,correct,MATCH,MISMATCH,72.48,27.52,Line 1: SyntaxError: Program name required,3,90.1,hasil = y div x,"algoritma
+    input(y, x)
+    hasil = y div x
+    output(hasil)
+endprogram"
+31,KEYSHA HANADYA NASHIRA (103012600049),BS1IF-50-REG01,Week_01-02 — Problem Solving Week 1-2 Easy,Soal 5 (Easy #5: Penjumlahan Empat Bilangan Bulat),First Submit First Attempt,Wrong with Misconception,Incorrect (Mark: 0),wrong,wrong,wrong,MATCH,MATCH,47.52,52.48,Line 2: SyntaxError: Unexpected character '&',3,57.5,total = a + b + c + d,"algoritma
+    input(&a, &b, &c, &d)
+    total = a + b + c + d
+    output(total)
+endprogram"
+32,KEYSHA HANADYA NASHIRA (103012600049),BS1IF-50-REG01,Week_01-02 — Problem Solving Week 1-2 Easy,Soal 6 (Easy #6: Persegi Panjang),First Submit First Attempt,Wrong with Misconception,Incorrect (Mark: 0),wrong,wrong,wrong,MATCH,MATCH,33.9,66.1,Line 1: SyntaxError: Program name required,4,60.0,output(luas),"algoritma
+    input( lebar, panjang)
+    luas = lebar * panjang
+    output(luas)
+endprogram"
+33,KEYSHA HANADYA NASHIRA (103012600049),BS1IF-50-REG01,Week_01-02 — Problem Solving Week 1-2 Easy,Soal 7 (Easy #7: Sisa Pembagian Kue (mod)),First Submit First Attempt,Wrong with Misconception,Incorrect (Mark: 0),wrong,wrong,wrong,MATCH,MATCH,36.06,63.94,Line 1: SyntaxError: Program name required,4,40.5,tulis(sisa),"algoritma
+    baca(y, x)
+    sisa = y mod x
+    tulis(sisa)"
+34,KEYSHA HANADYA NASHIRA (103012600049),BS1IF-50-REG01,Week_01-02 — Problem Solving Week 1-2 Ultimate,Soal 12 (Ultimate #1: Denominasi Uang Kembalian),First Submit First Attempt,Wrong with Misconception,Incorrect (Mark: 0),wrong,wrong,correct,MATCH,MISMATCH,51.73,48.27,Line 6: SyntaxError: Unexpected character 'â',14,19.7,output Jumlah lembar Rp10.000,"program kembalian
+kamus
+    kembalian, sepuluh, lima, satu : integer
+algoritma
+    input (kembalian)
+    sepuluh ← kembalian DIV 10000
+    kembalian ← kembalian MOD 10000
+    lima ← kembalian DIV 5000
+    kembalian ← kembalian MOD 5000
+    satu ← kembalian DIV 1000
+    input (sepuluh)
+    input (lima)
+    input (satu)
+    output Jumlah lembar Rp10.000
+    output Jumlah lembar Rp5.000
+    output Jumlah lembar Rp1.000
+endprogram"
+35,ATHALLAH ANDI ILHAM (103012600071),BS1IF-50-REG01,Week_01-02 — Problem Solving Week 1-2 Challenger,Soal 11 (Challenger #4: Persamaan y = (x² + 1/x)²),First Submit First Attempt,Wrong with Misconception,Incorrect (Mark: 0),wrong,wrong,wrong,MATCH,MATCH,13.3,86.7,Line 1: SyntaxError: Program name must be an identifier,8,97.7,y=((x*x)+(1/(x*x))*(x*x)+(1/(x*x))),"program algoritma
+
+kamus
+    x,y:real
+
+algoritmaa
+    input(x)
+    y=((x*x)+(1/(x*x))*(x*x)+(1/(x*x)))
+    output(y:0:6)
+
+endprogram"
+36,ATHALLAH ANDI ILHAM (103012600071),BS1IF-50-REG01,Week_01-02 — Problem Solving Week 1-2 Ultimate,Soal 13 (Ultimate #2: Konversi Detik Maraton ke Jam-Menit-Detik),First Submit First Attempt,Wrong with Misconception,Incorrect (Mark: 0),wrong,correct,correct,MISMATCH,MISMATCH,68.79,31.21,None,8,45.7,menit= (waktu mod 3600) div 60,"program jam
+
+kamus
+    waktu,jam,menit,detik:integer
+
+algoritma
+    jam= waktu div 3600
+    menit= (waktu mod 3600) div 60
+    detik= waktu mod 60
+
+    output(jam)
+    output(menit)
+    output(detik)
+
+endprogram"
+37,ATHALLAH ANDI ILHAM (103012600071),BS1IF-50-REG01,Week_01-02 — Problem Solving Week 1-2 Ultimate,Soal 19 (Ultimate #8: Pertukaran Isi Tiga Variabel),First Submit First Attempt,Wrong with Misconception,Incorrect (Mark: 0),wrong,wrong,correct,MATCH,MISMATCH,99.11,0.89,Line 1: SyntaxError: Program name must be an identifier,4,25.0,"x,y,z,a:integer","program algoritma
+
+kamus
+    x,y,z,a:integer
+
+algoritma
+    input(x,y,z)
+
+    a=x
+    x=z
+    z=y
+    y=a
+
+    output(x)
+    output(y)
+    output(z)
+
+endprogram"
+38,ZIDAN RIZKY WIBOWO (103012600084),BS1IF-50-REG01,Week_01-02 — Problem Solving Week 1-2 Challenger,Soal 9 (Challenger #2: Kalkulator Pecahan (a/b dan c/d)),Final Submit,Wrong with Misconception,"Correct (Mark: 1, Attempt #1)",wrong,correct,correct,MISMATCH,MISMATCH,98.1,1.9,None,14,58.0,a_pembilang = (a*d)+(c*b),"program Kalkulator
+
+kamus
+    a,b,c,d : integer
+    a_pembilang,a_penyebut : integer
+    s_pembilang,s_penyebut : integer
+    m_pembilang,m_penyebut : integer
+    d_pembilang,d_penyebut : integer
+
+algoritma
+
+    input(a,b,c,d)
+
+    a_pembilang = (a*d)+(c*b)
+    a_penyebut = b*d
+
+    s_pembilang = (a*d)-(c*b)
+    s_penyebut = b*d
+
+    m_pembilang = a*c
+    m_penyebut = b*d
+
+    d_pembilang = a*d
+    d_penyebut = b*c
+
+    output(""addition:"")
+    output(a_pembilang)
+    output(""/"")
+    output(a_penyebut)
+
+    output(""subtraction:"")
+    output(s_pembilang)
+    output(""/"")
+    output(s_penyebut)
+
+    output(""multiplication:"")
+    output(m_pembilang)
+    output(""/"")
+    output(m_penyebut)
+
+    output(""division:"")
+    output(d_pembilang)
+    output(""/"")
+    output(d_penyebut)
+    endprogram"

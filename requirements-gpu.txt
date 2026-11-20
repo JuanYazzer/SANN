@@ -1,0 +1,17 @@
+# Optional GPU runtime for TensorFlow 2.10 on Windows, installed inside the venv
+# (no system-wide CUDA/cuDNN install needed).
+#
+#   uv pip install -r requirements-gpu.txt
+#
+# TF 2.10 was built against CUDA 11.2 / cuDNN 8.1; these CUDA 11.8 / cuDNN 8.9
+# libraries are ABI-compatible (same cudart64_110.dll / cudnn64_8.dll names).
+# The DLL folders must be on PATH: see setup_gpu_path.py.
+
+nvidia-cuda-runtime-cu11==11.8.89
+nvidia-cublas-cu11==11.11.3.6
+nvidia-cufft-cu11==10.9.0.58
+nvidia-curand-cu11==10.3.0.86
+nvidia-cusolver-cu11==11.4.1.48
+nvidia-cusparse-cu11==11.7.5.86
+nvidia-cudnn-cu11==8.9.5.29
+
