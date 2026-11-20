@@ -53,6 +53,7 @@ from config import Config
 from parserDAP import (
     _get_ast_disk_cache,
     program_parser,
+    normalize_dap_ast,
     repair_dap_code,
     build_fallback_ast,
     extracting_AST,
@@ -254,33 +255,40 @@ def load_monitored_codes_metadata():
             by_nim_summary[nim]["monitored_count"] += 1
             by_nim_summary[nim]["entries"].append(entry)
 
-    # Tambahkan juga info miskonsepsi dari Sequential_Misconception_and_FirstPseudocode.csv jika ada
-    seq_pattern = str(
-        ANALYZE_CLEAN_DIR / "*" / "Week_01-02_Sequential_Misconception_and_FirstPseudocode.csv"
-    )
-    for sf in sorted(glob.glob(seq_pattern)):
-        try:
-            sdf = pd.read_csv(sf)
-            for _, sr in sdf.iterrows():
-                snim = str(sr.get("NIM", "")).strip()
-                mp_all = str(sr.get("Misconception_Detected_Semua_MP", "")).strip()
-                if snim and mp_all and mp_all != "nan":
-                    if snim not in by_nim_summary:
-                        by_nim_summary[snim] = {
-                            "all_week_misconceptions": mp_all,
-                            "monitored_count": 0,
-                            "entries": [],
-                        }
-                    elif not by_nim_summary[snim].get("all_week_misconceptions"):
-                        by_nim_summary[snim]["all_week_misconceptions"] = mp_all
-        except Exception:
-            pass
+    # Tambahkan juga info miskonsepsi dari Sequential_Misconception_and_FirstPseudocode.csv (Week 1-4)
+    by_nim_week_mp = {}
+    for wk_pat in (
+        "Week_01-02_Sequential_Misconception_and_FirstPseudocode.csv",
+        "Week_03_Sequential_Misconception_and_FirstPseudocode.csv",
+        "Week_04_Sequential_Misconception_and_FirstPseudocode.csv",
+    ):
+        wk_label = wk_pat.split("_Sequential_")[0]
+        seq_pattern = str(ANALYZE_CLEAN_DIR / "*" / wk_pat)
+        for sf in sorted(glob.glob(seq_pattern)):
+            try:
+                sdf = pd.read_csv(sf)
+                for _, sr in sdf.iterrows():
+                    snim = str(sr.get("NIM", "")).strip()
+                    mp_all = str(sr.get("Misconception_Detected_Semua_MP", "")).strip()
+                    if snim and mp_all and mp_all.lower() != "nan":
+                        by_nim_week_mp[(snim, wk_label)] = mp_all
+                        if snim not in by_nim_summary:
+                            by_nim_summary[snim] = {
+                                "all_week_misconceptions": mp_all,
+                                "monitored_count": 0,
+                                "entries": [],
+                            }
+                        elif not by_nim_summary[snim].get("all_week_misconceptions"):
+                            by_nim_summary[snim]["all_week_misconceptions"] = mp_all
+            except Exception:
+                pass
 
     return {
         "by_nim_q_code": by_nim_q_code,
         "by_nim_q_source": by_nim_q_source,
         "by_nim_q": by_nim_q,
         "by_nim_summary": by_nim_summary,
+        "by_nim_week_mp": by_nim_week_mp,
         "monitored_nims": monitored_nims,
     }
 
@@ -301,28 +309,27 @@ def load_reviewed_student_nims():
 
 def load_week1_chronological_attempts(recursive_subtrees=True, max_depth=None):
     """
-    Membaca seluruh file Week_01-02_Problem_Solving_Questions.csv (8 kelas kanonik, 19 soal).
-    Menyusun urutan sekuensial per mahasiswa berdasarkan ATTEMPT:
-      - Attempt 1 (Soal 1 -> selesai, terurut sesuai waktu submit First_Submit_Time & Slot_Number)
-      - Attempt 2 (Soal 1 -> selesai, berada di urutan waktu berikutnya setelah Attempt 1)
-      - dst. lintas kuis (Easy -> Challenger -> Ultimate) sesuai waktu Started_Time & Attempt_ID.
-    Mengekstrak seluruh subtree AST secara rekursif penuh TANPA batas max_depth (max_depth=None).
+    Membaca SELURUH data submit (bukan hanya first & last, melainkan semua langkah submit)
+    dan seluruh attempt dari Minggu 1 hingga Minggu 4 (Week_01-02, Week_03, Week_04)
+    dari Week_01-04_All_Submits.csv.
+    Menyusun urutan sekuensial per mahasiswa secara kronologis lintas minggu & attempt:
+      - Attempt 1 (Soal 1 submit 1 -> submit 2 -> ... -> selesai)
+      - Attempt 2 (Soal 1 submit 1 -> ... -> selesai)
+      - dst. dari Week_01-02 -> Week_03 -> Week_04.
+    Mengekstrak seluruh subtree AST secara rekursif penuh TANPA batas max_depth (max_depth=None)
+    menggunakan DAP terbaru (DAP/repair.py).
     """
-    pattern = str(ANALYZE_CLEAN_DIR / "*" / "Week_01-02_Problem_Solving_Questions.csv")
-    files = sorted(glob.glob(pattern))
-    if not files:
-        fallback = PROJECT_ROOT / "Week_01-02_Problem_Solving_Questions.csv"
-        files = [str(fallback)] if fallback.exists() else []
+    all_submits_csv = PROJECT_ROOT / "Week_01-04_All_Submits.csv"
+    if not all_submits_csv.exists():
+        raise FileNotFoundError(
+            f"File {all_submits_csv} belum ditemukan. Jalankan code/extract_all_submits_w1_w4.py terlebih dahulu."
+        )
 
-    dfs = []
-    for f in files:
-        d = pd.read_csv(f)
-        if d["Question_Name"].nunique() <= 20:
-            dfs.append(d)
+    raw_df = pd.read_csv(all_submits_csv, low_memory=False)
+    raw_df["Question_Name"] = raw_df["Question_Name"].fillna("").astype(str).str.strip()
+    raw_df = raw_df[raw_df["Question_Name"] != ""].copy()
 
-    raw_df = pd.concat(dfs, ignore_index=True)
-
-    unique_problems = sorted(raw_df["Question_Name"].dropna().astype(str).unique())
+    unique_problems = sorted(raw_df["Question_Name"].unique())
     problem_to_ix = {q: idx for idx, q in enumerate(unique_problems)}
     ix_to_problem = {idx: q for idx, q in enumerate(unique_problems)}
 
@@ -330,11 +337,12 @@ def load_week1_chronological_attempts(recursive_subtrees=True, max_depth=None):
     for _, r in raw_df[["Question_Name", "Quiz_Name"]].drop_duplicates().iterrows():
         qname = str(r["Question_Name"])
         qz = str(r["Quiz_Name"])
-        if "Easy" in qz:
+        qz_low = qz.lower()
+        if "easy" in qz_low or "basic" in qz_low:
             problem_category[qname] = "Easy"
-        elif "Challenger" in qz:
+        elif "challenger" in qz_low or "intermediate" in qz_low:
             problem_category[qname] = "Challenger"
-        elif "Ultimate" in qz:
+        elif "ultimate" in qz_low:
             problem_category[qname] = "Ultimate"
         else:
             problem_category[qname] = "Other"
@@ -344,21 +352,22 @@ def load_week1_chronological_attempts(recursive_subtrees=True, max_depth=None):
     by_nim_q_source = mon_meta["by_nim_q_source"]
     by_nim_q = mon_meta["by_nim_q"]
     by_nim_summary = mon_meta["by_nim_summary"]
+    by_nim_week_mp = mon_meta.get("by_nim_week_mp", {})
 
-    # Kumpulkan setiap pengerjaan soal di dalam setiap Attempt kuis
+    # Kumpulkan SELURUH langkah submit pada setiap soal di setiap Attempt (Week 1-4)
     events = []
     for _, r in raw_df.iterrows():
         qname = str(r.get("Question_Name", ""))
         if qname not in problem_to_ix:
             continue
 
-        sc = _norm_code(r.get("Student_Code", ""))
-        fc = _norm_code(r.get("First_Submit_Pseudocode", ""))
-        if not sc and not fc:
+        code_used = _norm_code(r.get("Student_Code", ""))
+        if not code_used:
             continue
 
         nim = str(r.get("NIM", "")).strip()
         class_name = str(r.get("Class_Name", "")).strip()
+        week_str = str(r.get("Week", "Week_01-02")).strip()
         student_key = f"{class_name}_{nim}"
         student_name = str(r.get("Student_Name", "")).strip()
         quiz_name = str(r.get("Quiz_Name", "")).strip()
@@ -370,6 +379,13 @@ def load_week1_chronological_attempts(recursive_subtrees=True, max_depth=None):
         )
         slot_no = int(r.get("Slot_Number", 0)) if pd.notna(r.get("Slot_Number")) else 0
         q_no = int(r.get("Question_No", slot_no)) if pd.notna(r.get("Question_No")) else slot_no
+        sub_idx = int(r.get("Submit_Index", 1)) if pd.notna(r.get("Submit_Index")) else 1
+        total_subs = (
+            int(r.get("Total_Submits_In_Question", 1))
+            if pd.notna(r.get("Total_Submits_In_Question"))
+            else 1
+        )
+        submit_stage = str(r.get("Submit_Stage", f"Submit #{sub_idx}/{total_subs}")).strip()
 
         started_t = (
             str(r.get("Started_Time", "")).strip()
@@ -382,80 +398,42 @@ def load_week1_chronological_attempts(recursive_subtrees=True, max_depth=None):
             else ""
         )
         submit_t = (
-            str(r.get("First_Submit_Time", "")).strip()
-            if pd.notna(r.get("First_Submit_Time")) and str(r.get("First_Submit_Time", "")).strip()
+            str(r.get("Submit_Time", "")).strip()
+            if pd.notna(r.get("Submit_Time")) and str(r.get("Submit_Time", "")).strip()
             else (started_t or completed_t)
         )
-
         is_corr = int(r["Is_Correct"]) if pd.notna(r.get("Is_Correct")) else 0
-        f_state = str(r.get("First_Submit_State", "")).strip()
-        f_corr = 1 if f_state == "Correct" else 0
-        num_submits = int(r["Num_Submits"]) if pd.notna(r.get("Num_Submits")) else 1
 
-        stu_mp_summary = by_nim_summary.get(nim, {}).get(
-            "all_week_misconceptions", "Tidak ada data miskonsepsi"
+        stu_mp_week = by_nim_week_mp.get(
+            (nim, week_str),
+            by_nim_summary.get(nim, {}).get(
+                "all_week_misconceptions", "Tidak ada data miskonsepsi"
+            ),
         )
-        q_mon_list = by_nim_q.get((nim, qname), [])
+        q_mon_list = by_nim_q.get((nim, qname), []) if week_str == "Week_01-02" else []
         default_q_misconception = (
-            q_mon_list[0]["misconception"] if q_mon_list else f"Semua MP Minggu Itu: {stu_mp_summary}"
+            q_mon_list[0]["misconception"]
+            if q_mon_list
+            else f"Semua MP {week_str}: {stu_mp_week}"
         )
 
-        # Cek apakah ada kode 'First Submit First Attempt' yang dipantau di Monitored_Codes_Dipantau.csv
-        mon_first = (
-            by_nim_q_code.get((nim, qname, fc))
-            or (by_nim_q_source.get((nim, qname, "First Submit First Attempt")) if attempt_no == 1 else None)
-        )
-        mon_final = (
-            by_nim_q_code.get((nim, qname, sc))
-            or (by_nim_q_source.get((nim, qname, "Final Submit")) if attempt_no == 1 else None)
-        )
+        # Cocokkan dengan Monitored_Codes_Dipantau.csv:
+        # 1) Cocokkan persis berdasarkan (NIM, Nama_Soal, Code)
+        matched_mon = by_nim_q_code.get((nim, qname, code_used))
+        # 2) Fallback hanya untuk Week_01-02 Attempt #1 First/Final Submit
+        if matched_mon is None and week_str == "Week_01-02" and attempt_no == 1:
+            if sub_idx == 1 and "First Submit First Attempt" in submit_stage:
+                matched_mon = by_nim_q_source.get((nim, qname, "First Submit First Attempt"))
+            elif sub_idx == total_subs and "Final Submit" in submit_stage:
+                matched_mon = by_nim_q_source.get((nim, qname, "Final Submit"))
 
-        # Jika Attempt 1 memiliki kode First Submit yang dipantau dan berbeda dari Final Submit,
-        # tampilkan langkah First Submit First Attempt terlebih dahulu lalu diikuti Final Submit pada soal tersebut
-        if attempt_no == 1 and mon_first and fc and sc and fc != sc:
-            events.append(
-                {
-                    "student_key": student_key,
-                    "NIM": nim,
-                    "Student_Name": student_name,
-                    "Class_Name": class_name,
-                    "Quiz_Name": quiz_name,
-                    "Quiz_Category": quiz_cat,
-                    "Question_Name": qname,
-                    "problem_id": problem_to_ix[qname],
-                    "attempt_id": attempt_id,
-                    "attempt_number": attempt_no,
-                    "attempt_started_time": started_t,
-                    "attempt_completed_time": completed_t,
-                    "submit_time": submit_t,
-                    "slot_no": slot_no,
-                    "sub_order": 1,
-                    "submit_stage": "First Submit First Attempt",
-                    "question_no": q_no,
-                    "num_submits": num_submits,
-                    "code": mon_first["code"] or fc,
-                    "correctness": 1 if mon_first["hasil_gt"].lower() == "correct" else f_corr,
-                    "is_monitored": True,
-                    "monitored_row_no": mon_first["monitored_row_no"],
-                    "monitored_category": mon_first["kategori_pantauan"],
-                    "monitored_source": mon_first["sumber_code"],
-                    "monitored_status_asli": mon_first["status_asli_code"],
-                    "monitored_hasil_gt": mon_first["hasil_gt"],
-                    "monitored_code_note": mon_first.get("code_note", "-"),
-                    "monitored_reviewer": mon_first.get("reviewer", "-"),
-                    "misconception": mon_first["misconception"],
-                    "student_all_misconceptions": stu_mp_summary,
-                }
-            )
-
-        code_used = sc if sc else fc
-        matched_mon = mon_final or (mon_first if (not sc or fc == sc) else None)
         events.append(
             {
                 "student_key": student_key,
                 "NIM": nim,
                 "Student_Name": student_name,
                 "Class_Name": class_name,
+                "Week": week_str,
                 "Quiz_Name": quiz_name,
                 "Quiz_Category": quiz_cat,
                 "Question_Name": qname,
@@ -466,11 +444,11 @@ def load_week1_chronological_attempts(recursive_subtrees=True, max_depth=None):
                 "attempt_completed_time": completed_t,
                 "submit_time": submit_t,
                 "slot_no": slot_no,
-                "sub_order": 2,
-                "submit_stage": matched_mon["sumber_code"] if matched_mon else ("Final Submit" if sc else "First Submit"),
+                "sub_order": sub_idx,
+                "submit_stage": submit_stage,
                 "question_no": q_no,
-                "num_submits": num_submits,
-                "code": matched_mon["code"] if (matched_mon and matched_mon.get("code")) else code_used,
+                "num_submits": total_subs,
+                "code": code_used,
                 "correctness": is_corr,
                 "is_monitored": bool(matched_mon is not None),
                 "monitored_row_no": matched_mon["monitored_row_no"] if matched_mon else None,
@@ -481,16 +459,16 @@ def load_week1_chronological_attempts(recursive_subtrees=True, max_depth=None):
                 "monitored_code_note": matched_mon.get("code_note", "-") if matched_mon else "-",
                 "monitored_reviewer": matched_mon.get("reviewer", "-") if matched_mon else "-",
                 "misconception": matched_mon["misconception"] if matched_mon else default_q_misconception,
-                "student_all_misconceptions": stu_mp_summary,
+                "student_all_misconceptions": stu_mp_week,
             }
         )
 
     events_df = pd.DataFrame(events)
 
-    # Urutkan secara ketat berdasarkan:
+    # Urutkan secara ketat kronologis berdasarkan:
     # 1. Mahasiswa (student_key)
     # 2. Waktu mulai Attempt kuis & ID Attempt & Nomor Attempt (Attempt 1 selesai dulu, baru Attempt 2, dst.)
-    # 3. Waktu submit soal di dalam Attempt tersebut (submit_time, slot_no, sub_order) -> Soal 1 s/d selesai
+    # 3. Waktu submit di dalam Attempt tersebut (submit_time, slot_no, sub_order)
     events_df.sort_values(
         by=[
             "student_key",
@@ -539,15 +517,15 @@ def load_week1_chronological_attempts(recursive_subtrees=True, max_depth=None):
     for c in unique_codes:
         parsed = None
         if c in disk_cache and isinstance(disk_cache[c], dict):
-            parsed = disk_cache[c]
+            parsed = normalize_dap_ast(disk_cache[c])
         else:
             try:
-                parsed = program_parser(c)
+                parsed = program_parser(c, normalize=True)
             except Exception:
                 try:
-                    parsed = program_parser(repair_dap_code(c))
+                    parsed = program_parser(repair_dap_code(c), normalize=True)
                 except Exception:
-                    parsed = build_fallback_ast(c)
+                    parsed = normalize_dap_ast(build_fallback_ast(c))
 
         subtrees = extracting_AST(
             parsed, leaf_flag, max_depth, recursive=recursive_subtrees
@@ -709,6 +687,7 @@ def build_dkt_sequences_for_students(
                     "curr_attempt_id": curr_ev["attempt_id"],
                     "curr_attempt_no": curr_ev["attempt_number"],
                     "curr_attempt_session": curr_ev["student_attempt_session"],
+                    "curr_week": curr_ev.get("Week", "Week_01-02"),
                     "curr_quiz_name": curr_ev["Quiz_Name"],
                     "curr_quiz_category": curr_ev["Quiz_Category"],
                     "curr_q_order": curr_ev["q_order_in_attempt"],
@@ -731,6 +710,7 @@ def build_dkt_sequences_for_students(
                     "next_attempt_id": next_ev["attempt_id"],
                     "next_attempt_no": next_ev["attempt_number"],
                     "next_attempt_session": next_ev["student_attempt_session"],
+                    "next_week": next_ev.get("Week", "Week_01-02"),
                     "next_quiz_name": next_ev["Quiz_Name"],
                     "next_quiz_category": next_ev["Quiz_Category"],
                     "next_q_order": next_ev["q_order_in_attempt"],
@@ -1048,14 +1028,14 @@ def run_full_sann_dkt_pipeline(
         [X_sann_train, X_sann_train_p],
         Y_sann_train,
         validation_data=([X_sann_val, X_sann_val_p], Y_sann_val),
-        batch_size=32,
+        batch_size=64,
         epochs=sann_epochs,
         callbacks=[sann_es],
         class_weight=sann_cw,
         verbose=1,
     )
 
-    sann_test_probs = sann_model.predict([X_sann_test, X_sann_test_p], verbose=0)
+    sann_test_probs = sann_model.predict([X_sann_test, X_sann_test_p], batch_size=128, verbose=0)
     sann_test_pred = np.argmax(sann_test_probs, axis=1)
     sann_acc = float(metrics.accuracy_score(y_sann_test_raw, sann_test_pred))
     sann_f1 = float(metrics.f1_score(y_sann_test_raw, sann_test_pred, zero_division=0))
@@ -1066,6 +1046,7 @@ def run_full_sann_dkt_pipeline(
     # Ekstrak SANN Code Vectors c_t (TANPA normalisasi L2) & Attention Weights
     print("\n -> Mengekstrak SANN Code Vectors (c_t) TANPA normalisasi L2 + Line Attention...")
     unique_codes_list = list(code_to_subtrees.keys())
+    code_to_u_idx = {c: i for i, c in enumerate(unique_codes_list)}
     all_unique_paths = [code_to_subtrees[c] for c in unique_codes_list]
     all_unique_paths_str = [[" ".join(st) for st in p] for p in all_unique_paths]
 
@@ -1079,7 +1060,7 @@ def run_full_sann_dkt_pipeline(
             np.array(X_all_nodes, dtype=np.int32),
             np.array(X_all_paths, dtype=np.int32),
         ],
-        batch_size=64,
+        batch_size=128,
         verbose=0,
     )
 
@@ -1088,9 +1069,9 @@ def run_full_sann_dkt_pipeline(
         c: extracted_vecs[idx] for idx, c in enumerate(unique_codes_list)
     }
 
-    # Hitung bobot attention per baris untuk seluruh kode di test set
+    # Hitung bobot attention per baris untuk seluruh kode di test set (O(1) lookup + disk cache AST)
     test_unique_codes = test_events["code"].unique().tolist()
-    test_code_indices = [unique_codes_list.index(c) for c in test_unique_codes]
+    test_code_indices = [code_to_u_idx[c] for c in test_unique_codes]
     test_code_explain_map = compute_code_line_explainability_map(
         test_unique_codes,
         extracted_attn[test_code_indices],
@@ -1186,7 +1167,7 @@ def run_full_sann_dkt_pipeline(
     # TAHAP 4: CETAK PERBANDINGAN HASIL & SIMPAN MODEL + LAPORAN VISUAL LENGKAP
     # --------------------------------------------------------------------------
     print("\n" + "=" * 85)
-    print(" HASIL EVALUASI DEEP KNOWLEDGE TRACING MINGGU 1 (SESUAI TABEL 3 PAPER)")
+    print(" HASIL EVALUASI DEEP KNOWLEDGE TRACING MINGGU 1-4 (SELURUH SUBMIT & ATTEMPT)")
     print("=" * 85)
     print(
         f"{'Model':<18} | {'Test AUC (%)':>12} | {'Val AUC (%)':>11} | "
@@ -1208,6 +1189,28 @@ def run_full_sann_dkt_pipeline(
         f"{sdkt_eval_test['category_auc'].get('Ultimate', 0):>7.2f}%"
     )
     print("=" * 85)
+
+    # Evaluasi khusus pada 19 mahasiswa yang dipantau / direview
+    rev_sdkt_recs = [r for r in sdkt_eval_test["records"] if str(r.get("NIM", "")) in reviewed_nims]
+    rev_orig_recs = [r for r in orig_eval_test["records"] if str(r.get("NIM", "")) in reviewed_nims]
+    if rev_sdkt_recs:
+        rev_y = np.array([r["next_correctness"] for r in rev_sdkt_recs])
+        rev_p_sdkt = np.array([r["pred_prob"] for r in rev_sdkt_recs])
+        rev_l_sdkt = np.array([r["pred_label"] for r in rev_sdkt_recs])
+        rev_auc_sdkt = metrics.roc_auc_score(rev_y, rev_p_sdkt) * 100 if len(np.unique(rev_y)) > 1 else 0.0
+        rev_acc_sdkt = metrics.accuracy_score(rev_y, rev_l_sdkt) * 100
+        rev_f1_sdkt = metrics.f1_score(rev_y, rev_l_sdkt, zero_division=0) * 100
+
+        rev_y_o = np.array([r["next_correctness"] for r in rev_orig_recs])
+        rev_p_orig = np.array([r["pred_prob"] for r in rev_orig_recs])
+        rev_l_orig = np.array([r["pred_label"] for r in rev_orig_recs])
+        rev_auc_orig = metrics.roc_auc_score(rev_y_o, rev_p_orig) * 100 if len(np.unique(rev_y_o)) > 1 else 0.0
+        rev_acc_orig = metrics.accuracy_score(rev_y_o, rev_l_orig) * 100
+        rev_f1_orig = metrics.f1_score(rev_y_o, rev_l_orig, zero_division=0) * 100
+
+        print(f"\n [KHUSUS 19 SISWA DIPANTAU / REVIEWED ({len(rev_sdkt_recs)} transisi submit W1-W4)]")
+        print(f"   Original DKT    -> AUC: {rev_auc_orig:.2f}% | Acc: {rev_acc_orig:.2f}% | F1: {rev_f1_orig:.2f}%")
+        print(f"   SANN-DKT (Ours) -> AUC: {rev_auc_sdkt:.2f}% | Acc: {rev_acc_sdkt:.2f}% | F1: {rev_f1_sdkt:.2f}%")
 
     SAVED_DKT_DIR.mkdir(parents=True, exist_ok=True)
     sann_model.save_weights(str(SAVED_DKT_DIR / "modified_sann_weights.h5"))
@@ -1268,6 +1271,17 @@ def run_full_sann_dkt_pipeline(
     traj_df = pd.DataFrame(csv_records)
     traj_csv_path = SAVED_DKT_DIR / "test_student_trajectories.csv"
     traj_df.to_csv(traj_csv_path, index=False, encoding="utf-8-sig")
+
+    notes_only_records = [
+        r
+        for r in csv_records
+        if _has_valid_code_note(r.get("curr_monitored_code_note"))
+        or _has_valid_code_note(r.get("next_monitored_code_note"))
+    ]
+    notes_csv_path = SAVED_DKT_DIR / "monitored_with_notes_trajectories.csv"
+    pd.DataFrame(notes_only_records).to_csv(
+        notes_csv_path, index=False, encoding="utf-8-sig"
+    )
 
     _save_dkt_html_report(
         summary_payload,
@@ -1377,14 +1391,14 @@ def _save_dkt_html_report(
                         if p:
                             all_note_tags.add(p)
 
-        # Prioritaskan semua mahasiswa dari Reviewed_Students_Status.csv
+        # Prioritaskan semua mahasiswa dari Reviewed_Students_Status.csv (+ maks 5 siswa test lain agar HTML ringan)
         all_skeys = df_rec["student_key"].unique().tolist()
         rev_skeys = [
             sk
             for sk in all_skeys
             if str(df_rec[df_rec["student_key"] == sk]["NIM"].iloc[0]) in reviewed_nims
         ]
-        other_skeys = [sk for sk in all_skeys if sk not in rev_skeys]
+        other_skeys = [sk for sk in all_skeys if sk not in rev_skeys][:5]
         ordered_skeys = rev_skeys + other_skeys
 
         for s_idx, skey in enumerate(ordered_skeys):

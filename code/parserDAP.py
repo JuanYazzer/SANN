@@ -5,6 +5,8 @@ import numpy as np
 import argparse
 import random
 import os
+import sys
+import copy
 import subprocess
 import tempfile
 import functools
@@ -13,26 +15,29 @@ from config import Config
 from anytree.exporter import DotExporter
 import re
 
-@functools.lru_cache(maxsize=1)
-def get_dap_path():
-    """Finds the absolute path to the DAP compiler executable."""
-    env_path = os.environ.get("DAP_PATH")
-    if env_path and Path(env_path).exists():
-        return env_path
+# Gunakan modul DAP terbaru dari AMT-CS1/AMT-CS1/backend/app/DAP (folder DAP/ di root proyek)
+_PROJECT_ROOT = str(Path(__file__).resolve().parent.parent)
+if _PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, _PROJECT_ROOT)
 
-    dap_exe = Path.home() / ".dap" / "bin" / "dap.exe"
-    if dap_exe.exists():
-        return str(dap_exe)
+from DAP.repair import (
+    get_dap_path,
+    get_ast as _dap_get_ast,
+    normalize_ast as _dap_normalize_ast,
+    cleanup_dictionary_node as _dap_cleanup_dictionary_node,
+)
 
+
+def normalize_dap_ast(ast_data):
+    """Menormalisasi AST JSON menggunakan modul DAP terbaru (DAP/repair.py)."""
+    if not isinstance(ast_data, dict):
+        return ast_data
     try:
-        subprocess.run(
-            ["dap", "-h"], stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=1
-        )
-        return "dap"
+        norm = _dap_normalize_ast(copy.deepcopy(ast_data))
+        _dap_cleanup_dictionary_node(norm)
+        return norm
     except Exception:
-        pass
-
-    return None
+        return ast_data
 
 def get_subtree(root, text_paths, depth, MAX_DEPTH):
     config = Config()
@@ -348,7 +353,17 @@ _AST_DISK_CACHE = None
 def _get_ast_disk_cache():
     global _AST_DISK_CACHE
     if _AST_DISK_CACHE is None:
-        cache_file = Path(__file__).resolve().parent.parent / "saved_model_dap" / "ast_cache.json"
+        w14_cache_file = (
+            Path(__file__).resolve().parent.parent
+            / "saved_model_dap"
+            / "ast_cache_w1_w4_dap_latest.json"
+        )
+        legacy_cache_file = (
+            Path(__file__).resolve().parent.parent
+            / "saved_model_dap"
+            / "ast_cache.json"
+        )
+        cache_file = w14_cache_file if w14_cache_file.exists() else legacy_cache_file
         if cache_file.exists():
             try:
                 with open(cache_file, "r", encoding="utf-8") as f:
@@ -361,15 +376,10 @@ def _get_ast_disk_cache():
 
 
 @functools.lru_cache(maxsize=None)
-def program_parser(func):
+def program_parser(func, normalize=True):
+    """Mengompilasi kode DAP menjadi AST JSON menggunakan modul DAP terbaru (DAP/repair.py)."""
     if not isinstance(func, str) or not func.strip():
         raise ValueError("Empty DAP code")
-
-    dap_bin = get_dap_path()
-    if not dap_bin:
-        raise FileNotFoundError(
-            "DAP compiler binary not found. Please install DAP first."
-        )
 
     temp_path = None
     try:
@@ -383,15 +393,7 @@ def program_parser(func):
                 temp_path = tmp_file.name
             target_path = temp_path
 
-        cmd = [dap_bin, target_path, "--show-ast-json"]
-        result = subprocess.run(
-            cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True
-        )
-        if result.returncode != 0:
-            raise RuntimeError(result.stderr)
-
-        stdout = result.stdout.strip()
-        tree = json.loads(stdout)
+        tree = _dap_get_ast(target_path, normalize=normalize)
         if not isinstance(tree, dict) or "type" not in tree:
             raise ValueError("Invalid DAP AST JSON")
         return tree
@@ -408,20 +410,24 @@ def parser_main(code_list, Y, MAX_DEPTH, recursive=False):
     
     leaf_flag = config.leaf_flag # 1: with leaves, else: pruned
     
-    print("Parsing Start")
+    print("Parsing Start (menggunakan DAP terbaru: DAP/repair.py)")
     
     disk_cache = _get_ast_disk_cache()
     parsed_code = []
     
     for c in code_list:
         if c in disk_cache:
-            parsed = disk_cache[c]
+            parsed = (
+                normalize_dap_ast(disk_cache[c])
+                if isinstance(disk_cache[c], dict)
+                else disk_cache[c]
+            )
         else:
             try:
-                parsed = program_parser(c)
+                parsed = program_parser(c, normalize=True)
             except Exception:
                 try:
-                    parsed = program_parser(repair_dap_code(c))
+                    parsed = program_parser(repair_dap_code(c), normalize=True)
                 except Exception:
                     parsed = "Uncompilable"
         parsed_code.append(parsed)
